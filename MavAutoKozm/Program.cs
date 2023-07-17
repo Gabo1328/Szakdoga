@@ -10,6 +10,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+//ha itt "true" szerepel akkor nekünk kell kézzel elfogadni a reg után az új "User-t" a: dbo.AspNetUsers/EmailConfirmed mezõben
+//másik lehetõség egy email-es vagy sms-es aktiválás után a program írja át "true"-ra
+//ha itt "false" szerepel ellenõrzés nélkül reg után be lehet jelentkezni
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();

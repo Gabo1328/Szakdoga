@@ -10,10 +10,13 @@
 
         public string PhoneNumber { get; set; }
 
+        //FK: regisztrált user-hez való kötés
+        //9eac65ed-c99b-4087-8496-7b4fef719677
+        public string AspNetUserId { get; set; }
+
         //navigációs property
         public ICollection<Vehicle> Vehicles { get; set; }
 
         //tovább fejlesztési lehetőségek (pl: vevő értékelés)
-
     }
 }
