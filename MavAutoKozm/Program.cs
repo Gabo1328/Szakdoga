@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<MavAutoKozmDbContext>(options =>
+    options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 //ha itt "true" szerepel akkor nekünk kell kézzel elfogadni a reg után az új "User-t" a: dbo.AspNetUsers/EmailConfirmed mezõben
