@@ -1,0 +1,18 @@
+﻿a.foOldalGombja:link, a.foOldalGombja:visited {
+    background-color: lightblue;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid black;
+    width:20%;
+    font-size: 12px;
+    margin-bottom:1%;
+
+}
+.row{
+    display:flex;
+    justify-content: center;
+}
