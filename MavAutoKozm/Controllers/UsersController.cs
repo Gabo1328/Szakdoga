@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MavAutoKozm.Data;
 using MavAutoKozm.Models;
+using static System.Net.WebRequestMethods;
 
 namespace MavAutoKozm.Controllers
 {
@@ -22,7 +23,15 @@ namespace MavAutoKozm.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-              return _context.Users != null ? 
+            var AspNetUserId = User.Claims.FirstOrDefault
+               (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+
+           var Felhasznalo = _context.Users.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
+
+            return RedirectToAction("Details", Felhasznalo?.ID);
+            
+            //Todo dolgozó belépésénél ez kell majd:
+            return _context.Users != null ? 
                           View(await _context.Users.ToListAsync()) :
                           Problem("Entity set 'MavAutoKozmDbContext.Users'  is null.");
         }
@@ -47,7 +56,7 @@ namespace MavAutoKozm.Controllers
 
         // GET: Users/Create
         public IActionResult Create()
-        {
+        {                      
             return View();
         }
 
@@ -58,9 +67,12 @@ namespace MavAutoKozm.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,LastName,FirstMidName,Email,PhoneNumber,AspNetUserId")] User user)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)           
             {
-                _context.Add(user);
+                user.AspNetUserId = User.Claims.FirstOrDefault
+                (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+                
+                _context.Users.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
