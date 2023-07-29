@@ -23,12 +23,13 @@ namespace MavAutoKozm.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            var AspNetUserId = User.Claims.FirstOrDefault
-               (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
-
-           var Felhasznalo = _context.Users.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
-
-            return RedirectToAction("Details", Felhasznalo?.ID);
+           // var AspNetUserId = User.Claims.FirstOrDefault
+               //(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+            //
+           //var Felhasznalo = _context.Users.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
+            //
+            //return RedirectToAction("Details", Felhasznalo?.ID);
+            //Ideiglenes komment a designe miatt
             
             //Todo dolgozó belépésénél ez kell majd:
             return _context.Users != null ? 

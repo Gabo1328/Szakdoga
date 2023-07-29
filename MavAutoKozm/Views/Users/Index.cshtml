@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MavAutoKozm.Models.User>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Felhasználók";
 }
 
 <h1>Index</h1>
@@ -55,9 +55,9 @@ else
                     @Html.DisplayFor(modelItem => item.AspNetUserId)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Szerkeztés</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Részletek</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Törlés</a>
                 </td>
             </tr>
     }
