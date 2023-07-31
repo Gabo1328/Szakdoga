@@ -11,7 +11,7 @@ namespace MavAutoKozm.Data
         {
             
         }
-        public DbSet<User> Users { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
        // public DbSet<Vehicle> Vehicles { get; set; }
     }
 }

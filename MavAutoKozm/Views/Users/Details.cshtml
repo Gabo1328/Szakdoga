@@ -1,4 +1,4 @@
-﻿@model MavAutoKozm.Models.User
+﻿@model MavAutoKozm.Models.AppUser
 
 @{
     ViewData["Title"] = "Részletek";
@@ -38,6 +38,16 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AspNetUserId)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vehicles)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var item in Model.Vehicles)
+            {
+                <a asp-action="Index">@item.NumberPlate</a>
+            }
         </dd>
     </dl>
 </div>

@@ -32,25 +32,26 @@ namespace MavAutoKozm.Controllers
             //Ideiglenes komment a designe miatt
             
             //Todo dolgozó belépésénél ez kell majd:
-            return _context.Users != null ? 
-                          View(await _context.Users.ToListAsync()) :
+            return _context.AppUsers != null ? 
+                          View(await _context.AppUsers.ToListAsync()) :
                           Problem("Entity set 'MavAutoKozmDbContext.Users'  is null.");
         }
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Users == null)
+            if (id == null || _context.AppUsers == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users
+            var user = await _context.AppUsers.Include(v => v.Vehicles)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (user == null)
             {
                 return NotFound();
             }
+            //user.Vehicles = new List<Vehicle>();
 
             return View(user);
         }
@@ -66,14 +67,14 @@ namespace MavAutoKozm.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,LastName,FirstMidName,Email,PhoneNumber,AspNetUserId")] User user)
+        public async Task<IActionResult> Create([Bind("ID,LastName,FirstMidName,Email,PhoneNumber,AspNetUserId")] AppUser user)
         {
             //if (ModelState.IsValid)           
             {
                 user.AspNetUserId = User.Claims.FirstOrDefault
                 (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
                 
-                _context.Users.Add(user);
+                _context.AppUsers.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -83,16 +84,17 @@ namespace MavAutoKozm.Controllers
         // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Users == null)
+            if (id == null || _context.AppUsers == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.AppUsers.FindAsync(id);//Include(v => v.Vehicles)
             if (user == null)
             {
                 return NotFound();
             }
+            user.Vehicles = new List<Vehicle>();
             return View(user);
         }
 
@@ -101,7 +103,7 @@ namespace MavAutoKozm.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,LastName,FirstMidName,Email,PhoneNumber,AspNetUserId")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,LastName,FirstMidName,Email,PhoneNumber,AspNetUserId")] AppUser user)
         {
             if (id != user.ID)
             {
@@ -134,12 +136,12 @@ namespace MavAutoKozm.Controllers
         // GET: Users/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Users == null)
+            if (id == null || _context.AppUsers == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users
+            var user = await _context.AppUsers
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (user == null)
             {
@@ -154,14 +156,14 @@ namespace MavAutoKozm.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Users == null)
+            if (_context.AppUsers == null)
             {
-                return Problem("Entity set 'MavAutoKozmDbContext.Users'  is null.");
+                return Problem("Entity set 'MavAutoKozmDbContext.AppUsers'  is null.");
             }
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.AppUsers.FindAsync(id);
             if (user != null)
             {
-                _context.Users.Remove(user);
+                _context.AppUsers.Remove(user);
             }
             
             await _context.SaveChangesAsync();
@@ -170,7 +172,7 @@ namespace MavAutoKozm.Controllers
 
         private bool UserExists(int id)
         {
-          return (_context.Users?.Any(e => e.ID == id)).GetValueOrDefault();
+          return (_context.AppUsers?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }
