@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 
@@ -11,6 +12,7 @@ namespace MavAutoKozm.Models
 
         //FK
         [ForeignKey("AppUserId")]
+        [HiddenInput]
         public int AppUserId { get; set; }
 
         [Display(Name = "Márka")]

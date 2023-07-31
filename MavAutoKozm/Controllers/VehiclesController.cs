@@ -48,7 +48,14 @@ namespace MavAutoKozm.Controllers
         // GET: Vehicles/Create
         public IActionResult Create()
         {
-            return View();
+            var vehicle = new Vehicle();
+            var AspNetUserId = User.Claims.FirstOrDefault
+               (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+
+
+                var Felhasznalo = _context.AppUsers.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
+                vehicle.AppUserId = Felhasznalo.ID;
+            return View(vehicle);
         }
 
         // POST: Vehicles/Create
@@ -60,11 +67,13 @@ namespace MavAutoKozm.Controllers
         {
             if (ModelState.IsValid)
             {
+               
                 _context.Add(vehicle);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(vehicle);
+
         }
 
         // GET: Vehicles/Edit/5
