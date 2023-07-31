@@ -51,7 +51,6 @@ namespace MavAutoKozm.Controllers
             {
                 return NotFound();
             }
-            //user.Vehicles = new List<Vehicle>();
 
             return View(user);
         }
