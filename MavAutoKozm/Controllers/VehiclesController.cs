@@ -23,11 +23,10 @@ namespace MavAutoKozm.Controllers
         // GET: Vehicles
         public async Task<IActionResult> Index()
         {
-           
-            var ertek = HttpContext.Session.GetInt32(_felhasznaloId);
+            var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
 
-            return _context.Vehicles != null ? 
-                          View(await _context.Vehicles.ToListAsync()) :
+            return _context.Vehicles != null ?
+                          View(await _context.Vehicles.Where(jarmu => jarmu.AppUserId == FelhasznaloId).ToListAsync()) :
                           Problem("Entity set 'MavAutoKozmDbContext.Vehicles'  is null.");
         }
 

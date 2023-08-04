@@ -47,12 +47,11 @@
         <dd class="col-sm-10">
             @foreach (var item in Model.Vehicles)
             {
-                <a asp-action="Index">@item.NumberPlate</a>
+                <a asp-controller="Vehicles" asp-action="Details" asp-route-id="@item.Id">@item.NumberPlate</a>
             }
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ID">Szerkeztés</a> |
-    <a asp-action="Index">Vissza a listába</a>
+    <a asp-action="Edit" asp-route-id="@Model?.ID">Szerkesztés</a> |
 </div>

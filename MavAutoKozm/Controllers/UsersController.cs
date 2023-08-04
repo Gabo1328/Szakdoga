@@ -13,6 +13,7 @@ namespace MavAutoKozm.Controllers
 {
     public class UsersController : Controller
     {
+        private readonly string _felhasznaloId = "FelhasznaloId";
         private readonly MavAutoKozmDbContext _context;
 
         public UsersController(MavAutoKozmDbContext context)
@@ -23,14 +24,16 @@ namespace MavAutoKozm.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-           // var AspNetUserId = User.Claims.FirstOrDefault
-               //(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
-            //
-           //var Felhasznalo = _context.Users.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
-            //
-            //return RedirectToAction("Details", Felhasznalo?.ID);
-            //Ideiglenes komment a designe miatt
-            
+            var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
+            if (FelhasznaloId==null)
+            {
+                return RedirectToAction("Create");
+            }
+            else
+            {
+                return RedirectToAction("Details", new { id = FelhasznaloId });
+            }           
+
             //Todo dolgozó belépésénél ez kell majd:
             return _context.AppUsers != null ? 
                           View(await _context.AppUsers.ToListAsync()) :

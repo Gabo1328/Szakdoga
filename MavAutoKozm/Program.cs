@@ -51,7 +51,4 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.UseSession();
-//app.UseMvc();
-
 app.Run();
-
