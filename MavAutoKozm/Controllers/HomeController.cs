@@ -18,7 +18,7 @@ namespace MavAutoKozm.Controllers
             _logger = logger;
             _context = context;
         }
-        
+
         public IActionResult Index()
         {
             var AspNetUserId = User.Claims.FirstOrDefault
@@ -46,6 +46,26 @@ namespace MavAutoKozm.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult ServiceSelect()
+        {
+            return View();
+        }
+
+        // POST: ServiceSelectViewModels/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ServiceSelect([Bind("Category,Outer,Inner,Polish,Wax,Ceramic,Ppf,Quality")] ServiceSelectViewModel serviceSelectViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                //ToDo adatok elmentése
+                //ToDo összegző oldalra navigálás
+                return RedirectToAction(nameof(Index));
+            }
+            return View(serviceSelectViewModel);
         }
     }
 }
