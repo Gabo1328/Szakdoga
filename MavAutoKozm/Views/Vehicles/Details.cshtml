@@ -1,13 +1,13 @@
 ﻿@model MavAutoKozm.Models.Vehicle
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Részletek";
 }
-
-<h1>Details</h1>
+<img src="~/css/image/3cf626720ae64fb5a5b5d9eab9e8c185.png" alt="LOGO" style="float:right;width:90px;height:90px;" />
+<h1>Részletek</h1>
 
 <div>
-    <h4>Vehicle</h4>
+    
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -43,6 +43,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Szerkesztés</a> |
+    <a asp-action="Index">Vissza a listába</a>
 </div>

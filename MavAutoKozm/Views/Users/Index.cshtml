@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MavAutoKozm.Models.AppUser>
+﻿<link rel=" stylesheet " href="~/css/foOldal.css" asp-append-version="true" />
+@model IEnumerable<MavAutoKozm.Models.AppUser>
 
 @{
     ViewData["Title"] = "Felhasználók";
@@ -55,7 +56,7 @@ else
                     @Html.DisplayFor(modelItem => item.AspNetUserId)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Szerkeztés</a> |
+                    <a asp-action="Edit" asp-route-id="@item.ID">Szerkesztés</a> |
                     <a asp-action="Details" asp-route-id="@item.ID">Részletek</a> |
                     <a asp-action="Delete" asp-route-id="@item.ID">Törlés</a>
                 </td>
