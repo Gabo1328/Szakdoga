@@ -12,6 +12,7 @@ namespace MavAutoKozm.Controllers
 {
     public class VehiclesController : Controller
     {
+        private readonly string _felhasznaloId= "FelhasznaloId";
         private readonly MavAutoKozmDbContext _context;
 
         public VehiclesController(MavAutoKozmDbContext context)
@@ -22,7 +23,10 @@ namespace MavAutoKozm.Controllers
         // GET: Vehicles
         public async Task<IActionResult> Index()
         {
-              return _context.Vehicles != null ? 
+           
+            var ertek = HttpContext.Session.GetInt32(_felhasznaloId);
+
+            return _context.Vehicles != null ? 
                           View(await _context.Vehicles.ToListAsync()) :
                           Problem("Entity set 'MavAutoKozmDbContext.Vehicles'  is null.");
         }
@@ -49,12 +53,7 @@ namespace MavAutoKozm.Controllers
         public IActionResult Create()
         {
             var vehicle = new Vehicle();
-            var AspNetUserId = User.Claims.FirstOrDefault
-               (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
-
-
-                var Felhasznalo = _context.AppUsers.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
-                vehicle.AppUserId = Felhasznalo.ID;
+            vehicle.AppUserId = HttpContext.Session.GetInt32(_felhasznaloId).Value; //Figyelem ez Null is lehet
             return View(vehicle);
         }
 
