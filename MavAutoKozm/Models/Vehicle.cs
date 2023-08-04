@@ -29,5 +29,7 @@ namespace MavAutoKozm.Models
         
         [Display(Name = "Rendszám")]
         public string NumberPlate { get; set; }
+
+        //ToDO Kategóriát is tárolhatjuk
     }
 }
