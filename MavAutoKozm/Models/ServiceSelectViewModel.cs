@@ -7,6 +7,7 @@ namespace MavAutoKozm.Models
 {
     public class ServiceSelectViewModel
     {
+        [Display(Name = "Kategória")]
         public int Category { get; set; }
 
         [Display(Name = "Külső tisztítás")]

@@ -1,22 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Kategória";
 }
-
-<h1 class="display-6">Személyautó </h1>
-<p>
-    <a asp-action="ServiceSelect">
-        <img src="~/css/image/auto.jpg" alt="Személyautó" style="width:500px;height:350px;" />
-    </a>
-</p>
-<h2 class="display-6">Teherautó </h2>
-<p>
-    <img src="~/css/image/van1.jpg" alt="Teherautó" style="width:500px;height:350px;" />
-</p>
-<h2 class="display-6">Kamion </h2>
-<p>
-    <img src="~/css/image/truck.jpeg.jpg" alt="Kamion" style="width:500px;height:350px;" />
-</p>
-<h2 class="display-6">Motor </h2>
-<p>
-    <img src="~/css/image/bike.jpg" alt="Motor" style="width:500px;height:350px;" />
-</p>
+<table style="width:100%">
+    <tr>
+        <td>
+            <h1 class="display-6">Személyautó </h1>
+            <p>
+                <a asp-action="ServiceSelect">
+                    <img src="~/css/image/auto.jpg" alt="Személyautó" style="width:500px;height:350px;" />
+                </a>
+            </p>
+        </td>
+        <td>
+            <h2 class="display-6">Teherautó </h2>
+            <p>
+                <img src="~/css/image/van1.jpg" alt="Teherautó" style="width:500px;height:350px;" />
+            </p>
+        </td>        
+    </tr>
+    <tr>
+        <td>
+            <h2 class="display-6">Kamion </h2>
+            <p>
+                <img src="~/css/image/truck.jpeg.jpg" alt="Kamion" style="width:500px;height:350px;" />
+            </p>
+        </td>
+        <td>
+            <h2 class="display-6">Motor </h2>
+            <p>
+                <img src="~/css/image/bike.jpg" alt="Motor" style="width:500px;height:350px;" />
+            </p>
+        </td>      
+    </tr>
+</table>

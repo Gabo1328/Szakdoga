@@ -4,9 +4,7 @@
     ViewData["Title"] = "Igények";
 }
 
-<h1>Create</h1>
-
-<h4>ServiceSelectViewModel</h4>
+<h1>Igények</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,6 +15,13 @@
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Quality" class="control-label"></label>
+                <input asp-for="Quality" class="form-control" />
+                <span asp-validation-for="Quality" class="text-danger"></span>
+            </div>
+            <p></p>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Outer" /> @Html.DisplayNameFor(model => model.Outer)
@@ -46,14 +51,12 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Ppf" /> @Html.DisplayNameFor(model => model.Ppf)
                 </label>
-            </div>
+            </div>          
+            <p></p>
             <div class="form-group">
-                <label asp-for="Quality" class="control-label"></label>
-                <input asp-for="Quality" class="form-control" />
-                <span asp-validation-for="Quality" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Tovább" class="btn btn-primary" />
+                <input type="submit" value="Tovább" class="btn btn-primary" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
+                    text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 20%; font-size: 14px;
+                    margin-bottom: 1%"/>
             </div>
         </form>
     </div>
