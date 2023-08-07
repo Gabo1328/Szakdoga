@@ -18,8 +18,13 @@
             <p></p>
             <div class="form-group">
                 <label asp-for="Quality" class="control-label"></label>
-                <input asp-for="Quality" class="form-control" />
+                <!-- <input asp-for="Quality" class="form-control" /> -->
                 <span asp-validation-for="Quality" class="text-danger"></span>
+                <select asp-for="Quality">
+                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Default)">Alap</option>
+                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Bestbuy)">Legjobb választás</option>
+                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Premium)">Prémium</option>
+                </select>
             </div>
             <p></p>
             <div class="form-group form-check">
