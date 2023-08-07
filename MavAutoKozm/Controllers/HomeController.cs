@@ -47,9 +47,15 @@ namespace MavAutoKozm.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public IActionResult ServiceSelect()
+
+        //érték átadás
+        public IActionResult ServiceSelect(int category)
         {
-            return View();
+            var atadando_ertek = new ServiceSelectViewModel();
+            atadando_ertek.Category = category;
+            //Default értékek kiválasztása
+            //atadando_ertek.Inner = true;
+            return View(atadando_ertek);
         }
 
         // POST: ServiceSelectViewModels/Create

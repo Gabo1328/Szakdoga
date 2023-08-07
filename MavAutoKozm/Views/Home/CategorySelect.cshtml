@@ -6,7 +6,7 @@
         <td>
             <h1 class="display-6">Személyautó </h1>
             <p>
-                <a asp-action="ServiceSelect">
+                <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Car)">
                     <img src="~/css/image/auto.jpg" alt="Személyautó" style="width:500px;height:350px;" />
                 </a>
             </p>
@@ -14,7 +14,9 @@
         <td>
             <h2 class="display-6">Teherautó </h2>
             <p>
-                <img src="~/css/image/van1.jpg" alt="Teherautó" style="width:500px;height:350px;" />
+                <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Van)">
+                    <img src="~/css/image/van1.jpg" alt="Teherautó" style="width:500px;height:350px;" />
+                </a>                
             </p>
         </td>        
     </tr>
@@ -22,13 +24,17 @@
         <td>
             <h2 class="display-6">Kamion </h2>
             <p>
-                <img src="~/css/image/truck.jpeg.jpg" alt="Kamion" style="width:500px;height:350px;" />
+                <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Truck)">
+                    <img src="~/css/image/truck.jpeg.jpg" alt="Kamion" style="width:500px;height:350px;" />
+                </a>
             </p>
         </td>
         <td>
             <h2 class="display-6">Motor </h2>
             <p>
-                <img src="~/css/image/bike.jpg" alt="Motor" style="width:500px;height:350px;" />
+                <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Bike)">
+                    <img src="~/css/image/bike.jpg" alt="Motor" style="width:500px;height:350px;" />
+                </a>
             </p>
         </td>      
     </tr>
