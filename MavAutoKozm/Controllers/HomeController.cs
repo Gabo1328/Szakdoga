@@ -10,6 +10,7 @@ namespace MavAutoKozm.Controllers
     {
         //Elírás megelőzés
         private readonly string _felhasznaloId = "FelhasznaloId";
+        private readonly string _elmentettIgenyek = "ElmentettIgenyek";
         private readonly MavAutoKozmDbContext _context;
         private readonly ILogger<HomeController> _logger;
 
@@ -68,6 +69,7 @@ namespace MavAutoKozm.Controllers
             if (ModelState.IsValid)
             {
                 //ToDo adatok elmentése
+                HttpContext.Session.SetObject(_elmentettIgenyek,serviceSelectViewModel);
                 //ToDo összegző oldalra navigálás
                 return RedirectToAction(nameof(Index));
             }
