@@ -54,6 +54,7 @@ namespace MavAutoKozm.Controllers
         {
             var atadando_ertek = new ServiceSelectViewModel();
             atadando_ertek.Category = category;
+            atadando_ertek.Vehicles = _context.Vehicles.Where(v=>v.AppUserId == HttpContext.Session.GetInt32(_felhasznaloId)).ToList();
             //Default értékek kiválasztása
             //atadando_ertek.Inner = true;
             return View(atadando_ertek);
@@ -64,16 +65,25 @@ namespace MavAutoKozm.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ServiceSelect([Bind("Category,Outer,Inner,Polish,Wax,Ceramic,Ppf,Quality")] ServiceSelectViewModel serviceSelectViewModel)
+        public async Task<IActionResult> ServiceSelect([Bind("Category,Outer,Inner,Polish,Wax,Ceramic,Ppf,Quality,SelectedVehicleId")] ServiceSelectViewModel serviceSelectViewModel)
         {
             if (ModelState.IsValid)
             {
                 //ToDo adatok elmentése
                 HttpContext.Session.SetObject(_elmentettIgenyek,serviceSelectViewModel);
                 //ToDo összegző oldalra navigálás
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Summary));
             }
             return View(serviceSelectViewModel);
+        }
+
+        public IActionResult Summary()
+        {
+            //var atadando_ertek = new ServiceSelectViewModel();
+            //atadando_ertek.Category = category;
+            //Default értékek kiválasztása
+            //atadando_ertek.Inner = true;
+            return View();
         }
     }
 }
