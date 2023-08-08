@@ -9,6 +9,7 @@ namespace MavAutoKozm.Models
     {
         public AppUser ActualAppUser { get; set; }
         public ServiceSelectViewModel SelectedServices { get; set; }
+        public Vehicle SelectedVehicle { get; set; }
 
         [Display(Name = "Ár")]
         public int Price { get; set; }

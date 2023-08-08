@@ -88,6 +88,9 @@ namespace MavAutoKozm.Controllers
             var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
             //atadando_ertek.ID = FelhasznaloId.Value;
             atadando_ertek.ActualAppUser = _context.AppUsers.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
+            var elmentett_igenyek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
+            atadando_ertek.SelectedVehicle = _context.Vehicles.FirstOrDefault(v => v.Id == elmentett_igenyek.SelectedVehicleId);
+            atadando_ertek.SelectedServices = elmentett_igenyek;
             return View(atadando_ertek);
         }
     }
