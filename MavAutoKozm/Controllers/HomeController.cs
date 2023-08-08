@@ -67,7 +67,7 @@ namespace MavAutoKozm.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ServiceSelect([Bind("Category,Outer,Inner,Polish,Wax,Ceramic,Ppf,Quality,SelectedVehicleId")] ServiceSelectViewModel serviceSelectViewModel)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 //ToDo adatok elmentése
                 HttpContext.Session.SetObject(_elmentettIgenyek,serviceSelectViewModel);
@@ -79,11 +79,16 @@ namespace MavAutoKozm.Controllers
 
         public IActionResult Summary()
         {
-            //var atadando_ertek = new ServiceSelectViewModel();
+            var atadando_ertek = new SummaryViewModel();
             //atadando_ertek.Category = category;
             //Default értékek kiválasztása
-            //atadando_ertek.Inner = true;
-            return View();
+            atadando_ertek.Price = 2000;
+            atadando_ertek.OrderTime = DateTime.Now; 
+            atadando_ertek.CompletedTime = DateTime.Now.AddDays(3);
+            var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
+            //atadando_ertek.ID = FelhasznaloId.Value;
+            atadando_ertek.ActualAppUser = _context.AppUsers.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
+            return View(atadando_ertek);
         }
     }
 }
