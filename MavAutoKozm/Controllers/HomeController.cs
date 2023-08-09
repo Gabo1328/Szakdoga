@@ -99,11 +99,31 @@ namespace MavAutoKozm.Controllers
             atadando_ertek.SelectedServices = elmentett_igenyek;
             return View(atadando_ertek);
         }
-        public IActionResult SaveToDatabase()
+        public async Task<IActionResult> SaveToDatabase()
         {
-            //_context.Add();
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
+            var elmentett_igenyek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
+            var order = new Orders() 
+            { 
+                AppUserId = HttpContext.Session.GetInt32(_felhasznaloId).Value,
+                Category = elmentett_igenyek.Category,
+                Ceramic = elmentett_igenyek.Ceramic,
+                Inner = elmentett_igenyek.Inner,
+                Outer = elmentett_igenyek.Outer,
+                Polish = elmentett_igenyek.Polish,
+                Ppf = elmentett_igenyek.Ppf,
+                Quality = elmentett_igenyek.Quality,
+                VehicleId = elmentett_igenyek.SelectedVehicleId,
+                Wax = elmentett_igenyek.Wax,
+                //ToDo Progressből is Enum-ot csinálni folyamat modellezés miatt
+                Progress = 0,
+                //Ár: 10.000 x kiválasztott szolgáltatás x minőségi szint +1 (1-2-3)
+                Price = 2000,
+                OrderTime = DateTime.Now,
+                CompletedTime = DateTime.Now.AddDays(3)
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
             return View();
         }
     }
