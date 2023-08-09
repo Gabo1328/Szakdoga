@@ -40,6 +40,8 @@ namespace MavAutoKozm.Controllers
         }
         public IActionResult CategorySelect()
         {
+            //Korábban elmentett igények törlése a sessionből(ServiceSelect nulláról induljon)
+            HttpContext.Session.SetObject(_elmentettIgenyek, null);
             return View();
         }
 
@@ -52,8 +54,12 @@ namespace MavAutoKozm.Controllers
         //érték átadás
         public IActionResult ServiceSelect(int category)
         {
-            var atadando_ertek = new ServiceSelectViewModel();
-            atadando_ertek.Category = category;
+            var atadando_ertek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
+            if (atadando_ertek == null)
+            {
+                atadando_ertek = new ServiceSelectViewModel();
+                atadando_ertek.Category = category;
+            }
             atadando_ertek.Vehicles = _context.Vehicles.Where(v=>v.AppUserId == HttpContext.Session.GetInt32(_felhasznaloId)).ToList();
             //Default értékek kiválasztása
             //atadando_ertek.Inner = true;
