@@ -54,7 +54,11 @@ namespace MavAutoKozm.Models
         [Display(Name = "Állapot")]
         public int Progress { get; set; }
 
+        //[Display(Name = "Megrendelési szám")]
+        //public string OrderNumber { get; set; }
+
         //ToDo Utolső módosító
         //ToDo Utolsó módosítás ideje
+        //ToDo OrderNumber évente újrainduló számozással(VH-2023-001)
     }
 }

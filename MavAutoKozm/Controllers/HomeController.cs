@@ -99,5 +99,12 @@ namespace MavAutoKozm.Controllers
             atadando_ertek.SelectedServices = elmentett_igenyek;
             return View(atadando_ertek);
         }
+        public IActionResult SaveToDatabase()
+        {
+            //_context.Add();
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            return View();
+        }
     }
 }
