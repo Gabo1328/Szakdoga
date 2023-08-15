@@ -103,7 +103,7 @@ namespace MavAutoKozm.Controllers
         {
             var elmentett_igenyek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
             var order = new Orders() 
-            { 
+            {
                 AppUserId = HttpContext.Session.GetInt32(_felhasznaloId).Value,
                 Category = elmentett_igenyek.Category,
                 Ceramic = elmentett_igenyek.Ceramic,
