@@ -124,6 +124,7 @@ namespace MavAutoKozm.Controllers
 
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
+            ViewData["OrderId"] = $"VH-{DateTime.Now.Year}-{order.Id}";
             return View();
         }
     }
