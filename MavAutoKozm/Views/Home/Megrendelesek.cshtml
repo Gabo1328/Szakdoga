@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MavAutoKozm.Models.Orders>
+
+@{
+    ViewData["Title"] = "Megrendelések";
+}
+
+<h1>Megrendelések</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppUserId)
+                </td>
+                <td>
+                    @{
+                        var MegrendelesId = $"VH-{DateTime.Now.Year}-{item.Id}";
+                        @Html.DisplayFor(modelItem => MegrendelesId)
+                      }
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderTime)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

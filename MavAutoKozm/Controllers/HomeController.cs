@@ -127,5 +127,11 @@ namespace MavAutoKozm.Controllers
             ViewData["OrderId"] = $"VH-{DateTime.Now.Year}-{order.Id}";
             return View();
         }
+        //ToDo Userekre szétbontani
+        public IActionResult Megrendelesek()
+        {
+            var megrendelesek = _context.Orders;
+            return View(megrendelesek);
+        }
     }
 }
