@@ -130,7 +130,8 @@ namespace MavAutoKozm.Controllers
         //ToDo Userekre szétbontani
         public IActionResult Megrendelesek()
         {
-            var megrendelesek = _context.Orders;
+            var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
+            var megrendelesek = _context.Orders.Where(rendeles => rendeles.AppUserId == FelhasznaloId);
             return View(megrendelesek);
         }
     }
