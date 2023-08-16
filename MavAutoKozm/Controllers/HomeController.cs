@@ -134,5 +134,21 @@ namespace MavAutoKozm.Controllers
             var megrendelesek = _context.Orders.Where(rendeles => rendeles.AppUserId == FelhasznaloId);
             return View(megrendelesek);
         }
+        //ToDo Egyszerű vásárló csak a saját megrendelését tudja törölni
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            if (_context.Orders == null)
+            {
+                return Problem("Entity set 'MavAutoKozmDbContext.Orders'  is null.");
+            }
+            var order = await _context.Orders.FindAsync(id);
+            if (order != null)
+            {
+                _context.Orders.Remove(order);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Megrendelesek));
+        }
     }
 }
