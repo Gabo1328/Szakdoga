@@ -150,5 +150,21 @@ namespace MavAutoKozm.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Megrendelesek));
         }
+        public async Task<IActionResult> DetailsOrder(int? id)
+        {
+            if (id == null || _context.Orders == null)
+            {
+                return NotFound();
+            }
+
+            var order = await _context.Orders
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            return View(order);
+        }
     }
 }
