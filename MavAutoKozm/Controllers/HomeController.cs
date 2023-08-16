@@ -11,7 +11,7 @@ namespace MavAutoKozm.Controllers
         //Elírás megelőzés
         private readonly string _felhasznaloId = "FelhasznaloId";
         private readonly string _elmentettIgenyek = "ElmentettIgenyek";
-        private readonly MavAutoKozmDbContext _context;
+        private readonly MavAutoKozmDbContext _context; //Ezzel éri el az adatbázist
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger, MavAutoKozmDbContext context)
@@ -163,6 +163,22 @@ namespace MavAutoKozm.Controllers
             {
                 return NotFound();
             }
+
+            //--VehilceId-ból rendszám--
+            //Context-el értük el az adatbázist
+            //Vehicles-vel a táblát
+            //FirstOrDefault legelső találatot adja vissza (ha nem talál eredmlnyt akkor null)
+            //FirstOrDefault-ban egyesével végig megyünk a táblán
+            //Ezeknek "n" lesz a neve az egyes elemeknek
+            //Order.vehicleId tartalmazta a megrendeléshez csatolt jármű ID-ját
+            //Azt kellett összehasonlítani hogy az egyes elemek közül melyiknek az ID-ja egyezik meg ezzel
+            //Az egészet egy "jarmu" nevű változóba tettük bele
+            //Ennek a változónak a NumberPlate propertiét jelenítjük meg az oldalon a vehicleId helyett
+            //ViewData["VehicleNumberPlate"] zsebbe tettük bele a rendszámot
+            //A cshtml oldalon @ViewData["VehicleNumberPlate"]-val vettük ki ezt az infót
+
+            var jarmu =_context.Vehicles.FirstOrDefault(n => n.Id == order.VehicleId);
+            ViewData["VehicleNumberPlate"] = jarmu.NumberPlate;
 
             return View(order);
         }

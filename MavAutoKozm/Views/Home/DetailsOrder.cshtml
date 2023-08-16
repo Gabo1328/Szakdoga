@@ -17,16 +17,20 @@
             @Html.DisplayFor(model => model.AppUserId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.VehicleId)
+            Rendszám
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.VehicleId)
+            @*@Html.DisplayFor(model => model.VehicleId)*@
+            @ViewData["VehicleNumberPlate"]
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category)
+         <dd class="col-sm-10">
+            @if (Model.Category == 0) {<div>Személyautó</div> }
+            else if( Model.Category == 1) {<div>Teherautó</div> }
+            else if( Model.Category == 2) {<div>Kamion</div> }
+            else {<div>Motor</div> }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Outer)
@@ -97,6 +101,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Megrendelesek">Vissza a Megrendelésekhez</a>
 </div>
