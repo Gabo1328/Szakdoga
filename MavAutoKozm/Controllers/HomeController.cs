@@ -30,7 +30,7 @@ namespace MavAutoKozm.Controllers
                 HttpContext.Session.SetInt32(_felhasznaloId, Felhasznalo.ID);
             else
                 HttpContext.Session.Remove(_felhasznaloId);
-
+  
             return View();
         }
 
