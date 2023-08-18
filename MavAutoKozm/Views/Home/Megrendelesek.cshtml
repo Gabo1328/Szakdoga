@@ -43,7 +43,10 @@
 
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+                    @{
+                        var Price = String.Format("{0:C0}", item.Price);
+                    }
+                    <div>@Price</div>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Category)

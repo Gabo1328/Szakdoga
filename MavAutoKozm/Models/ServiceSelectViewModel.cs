@@ -32,8 +32,10 @@ namespace MavAutoKozm.Models
         public int Quality { get; set; }
 
         [Display(Name = "Melyik járművét választja ki?")]
-        public int SelectedVehicleId { get; set; }    
-        
+        public int SelectedVehicleId { get; set; }
+
+        public int Price { get; set; }
+
         public List<Vehicle> Vehicles { get; set; }
     }
 }

@@ -75,6 +75,7 @@ namespace MavAutoKozm.Controllers
         {
             //if (ModelState.IsValid)
             {
+                serviceSelectViewModel.Price = GetPrice(serviceSelectViewModel);
                 //ToDo adatok elmentése
                 HttpContext.Session.SetObject(_elmentettIgenyek,serviceSelectViewModel);
                 //ToDo összegző oldalra navigálás
@@ -83,18 +84,46 @@ namespace MavAutoKozm.Controllers
             return View(serviceSelectViewModel);
         }
 
+        //3 /-el autómatikusan feljön a dokumnetálást és tool tippet adó információ
+
+        /// <summary>
+        /// Ár kiszámítása: 10.000 x kiválasztott szolgáltatás x minőségi szint +1 (1-2-3)
+        /// </summary>
+        /// <param name="selected_needs">a</param>
+        /// <returns>A kiszámolt ár</returns>
+        public int GetPrice(ServiceSelectViewModel selected_needs) 
+        {
+            int Price = 0;
+            int Db = 0;
+            if (selected_needs.Outer)
+                Db++;
+            if (selected_needs.Inner)
+                Db++;
+            if (selected_needs.Polish)
+                Db++;
+            if (selected_needs.Wax)
+                Db++;
+            if (selected_needs.Ceramic)
+                Db++;
+            if (selected_needs.Ppf)
+                Db++;
+            Price = Db * 10000 * (selected_needs.Quality + 1);
+            return Price;
+        }
+
         public IActionResult Summary()
         {
             var atadando_ertek = new SummaryViewModel();
             //atadando_ertek.Category = category;
             //Default értékek kiválasztása
-            atadando_ertek.Price = 2000;
+            //atadando_ertek.Price = 2000;
             atadando_ertek.OrderTime = DateTime.Now; 
             atadando_ertek.CompletedTime = DateTime.Now.AddDays(3);
             var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
             //atadando_ertek.ID = FelhasznaloId.Value;
             atadando_ertek.ActualAppUser = _context.AppUsers.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
             var elmentett_igenyek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
+            atadando_ertek.Price = elmentett_igenyek.Price;
             atadando_ertek.SelectedVehicle = _context.Vehicles.FirstOrDefault(v => v.Id == elmentett_igenyek.SelectedVehicleId);
             atadando_ertek.SelectedServices = elmentett_igenyek;
             return View(atadando_ertek);
@@ -114,10 +143,9 @@ namespace MavAutoKozm.Controllers
                 Quality = elmentett_igenyek.Quality,
                 VehicleId = elmentett_igenyek.SelectedVehicleId,
                 Wax = elmentett_igenyek.Wax,
+                Price = elmentett_igenyek.Price,
                 //ToDo Progressből is Enum-ot csinálni folyamat modellezés miatt
-                Progress = 0,
-                //Ár: 10.000 x kiválasztott szolgáltatás x minőségi szint +1 (1-2-3)
-                Price = 2000,
+                Progress = 0,                
                 OrderTime = DateTime.Now,
                 CompletedTime = DateTime.Now.AddDays(3)
             };
