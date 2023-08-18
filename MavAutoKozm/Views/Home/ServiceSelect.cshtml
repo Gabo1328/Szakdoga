@@ -10,14 +10,30 @@
     <div class="col-md-4">
         <form asp-action="ServiceSelect">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div style="display:flex; flex-wrap:nowrap">
                 <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control"readonly="true" />
-                <span asp-validation-for="Category" class="text-danger"></span>
+                <div style="width:10px">:</div>
+                <input asp-for="Category" class="form-control" hidden readonly="true" />
+                @if (Model.Category == 0)
+                {
+                    <div>Személyautó</div>
+                }
+                else if (Model.Category == 1)
+                {
+                    <div>Teherautó</div>
+                }
+                else if (Model.Category == 2)
+                {
+                    <div>Kamion</div>
+                }
+                else
+                {
+                    <div>Motor</div>
+                }
             </div>
             <p></p>
             <div class="form-group">
-                <label asp-for="Quality" class="control-label"></label>
+                <label asp-for="Quality" class="control-label"></label>:
                 <!-- <input asp-for="Quality" class="form-control" /> -->
                 <span asp-validation-for="Quality" class="text-danger"></span>
                 <select asp-for="Quality">
