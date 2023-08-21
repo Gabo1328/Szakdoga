@@ -38,5 +38,8 @@ namespace MavAutoKozm.Controllers
             }
             return View();
         }
+
+        public ViewResult Edit() => View(_userManager.Users.Select(x => new UsersInRole { Name = x.UserName, UserId = x.Id, Member = true }));
+            //new List<UsersInRole>());
     }
 }
