@@ -23,6 +23,20 @@ namespace MavAutoKozm.Controllers
 
         //A view így is meghívható
         //public ViewResult Index() => View(roleManager.Roles);
-       
+        public ViewResult Create() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Required] string name)
+        {
+            if (ModelState.IsValid)
+            {
+                IdentityResult result = await _roleManager.CreateAsync(new IdentityRole(name));
+                if (result.Succeeded)
+                    return RedirectToAction("Roles");
+                else
+                    ViewData["Hibauzenet"] = "Nem sikerült létrehozni a Szerepkört!";
+            }
+            return View(name);
+        }
     }
 }
