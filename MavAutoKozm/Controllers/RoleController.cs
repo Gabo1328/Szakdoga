@@ -34,9 +34,9 @@ namespace MavAutoKozm.Controllers
                 if (result.Succeeded)
                     return RedirectToAction("Roles");
                 else
-                    ViewData["Hibauzenet"] = "Nem sikerült létrehozni a Szerepkört!";
+                    ViewData["Hibauzenet"] = $"Nem sikerült létrehozni a Szerepkört! ({result.Errors.First()?.Description})";
             }
-            return View(name);
+            return View();
         }
     }
 }

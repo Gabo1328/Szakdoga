@@ -13,7 +13,7 @@
                 <label class="control-label">Név:</label>
                 <input name="name" class="form-control" />
             </div>
-            <p></p>
+            <p style="color:red">@ViewData["Hibauzenet"]</p>
             <div class="form-group">
                 <input type="submit" value="Mentés" class="btn btn-primary" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
                     text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 20%; font-size: 14px;
@@ -24,7 +24,7 @@
 </div>
 <p></p>
 <div>
-    <a asp-action="Index">Vissza a listába</a>
+    <a asp-action="Roles">Vissza a listába</a>
 </div>
 
 @section Scripts {
