@@ -1,4 +1,5 @@
 ﻿using MavAutoKozm.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +17,7 @@ namespace MavAutoKozm.Controllers
             _userManager = userMgr;
         }
 
-        
+        [Authorize(Roles = "Admin")]
         public IActionResult Roles()    
         {
             //_userManager.GetUserId()
