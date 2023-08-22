@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MavAutoKozm.Models.UsersInRole>
+﻿@model MavAutoKozm.Models.UserInRoleList
 
 @{
     ViewData["Title"] = "Edit";
@@ -9,36 +9,46 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Member)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Member)
-            </td>
-            <td>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+ <form asp-action="Edit">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.list[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.list[0].UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.list[0].Member)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.list) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+
+                    <input class="form-check-input" asp-for="@item.Member"/>
+
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <p></p>
+    <div class="form-group">
+        <input type="submit" value="Mentés" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
+                    text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 20%; font-size: 14px;
+                    margin-bottom: 1%" />
+    </div>
+</form>

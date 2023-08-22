@@ -1,6 +1,7 @@
 ﻿using MavAutoKozm.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace MavAutoKozm.Controllers
@@ -15,6 +16,7 @@ namespace MavAutoKozm.Controllers
             _userManager = userMgr;
         }
 
+        
         public IActionResult Roles()    
         {
             //_userManager.GetUserId()
@@ -53,7 +55,8 @@ namespace MavAutoKozm.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
-            var lista = new List<UsersInRole>();
+            var list = new UserInRoleList();
+            list.list = new List<UsersInRole>();
             var role = await _roleManager.FindByIdAsync(id);
             if (role != null)
             {
@@ -63,7 +66,7 @@ namespace MavAutoKozm.Controllers
                 {                   
                     var member = await _userManager.IsInRoleAsync(item, role.Name);  
                     var listaelem = new UsersInRole { Name = item.UserName, UserId = item.Id, Member = member };
-                    lista.Add(listaelem);
+                    list.list.Add(listaelem);
                 }
 
                 //Második megoldás
@@ -74,8 +77,49 @@ namespace MavAutoKozm.Controllers
                 //    Member = _userManager.IsInRoleAsync(x, role.Name).Result
                 //});
             }
-            return View(lista);
+            list.Valami = 1;
+            return View(list);
             
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("list")] UserInRoleList list)
+        {
+
+            //admin@admin.com hozzáadva a role-hoz
+            //var userid = "570e2912-6ab3-42dd-8598-d5caed4f0f78";
+            //var role = _roleManager.FindByIdAsync(id);
+            //var result = await _userManager.AddToRoleAsync(_userManager.FindByIdAsync(userid).Result, role.Result.Name);
+
+            var lista = new UserInRoleList();
+            lista.list = new List<UsersInRole>();
+            //if (id != user.ID)
+            //{
+            //    return NotFound();
+            //}
+
+            //if (ModelState.IsValid)
+            //{
+            //    try
+            //    {
+            //        _context.Update(user);
+            //        await _context.SaveChangesAsync();
+            //    }
+            //    catch (DbUpdateConcurrencyException)
+            //    {
+            //        if (!UserExists(user.ID))
+            //        {
+            //            return NotFound();
+            //        }
+            //        else
+            //        {
+            //            throw;
+            //        }
+            //    }
+            //    return RedirectToAction(nameof(Index));
+            //}
+            return View(lista);
         }
 
         public async Task<IActionResult> DeleteRole(string id)

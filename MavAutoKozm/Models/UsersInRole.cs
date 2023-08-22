@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 namespace MavAutoKozm.Models
 {
@@ -13,5 +15,18 @@ namespace MavAutoKozm.Models
         public string UserId { get; set; }
 
         public bool Member { get; set; }
+    }
+
+    public class UserInRoleList : PageModel
+    {
+        [BindProperty]
+        public List<UsersInRole> list { get; set; }
+
+        public int Valami { get; set; }
+
+        public ActionResult OnPost([FromForm] UserInRoleList lista) 
+        { 
+            return Page(); 
+        }
     }
 }
