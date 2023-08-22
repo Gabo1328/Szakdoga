@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MavAutoKozm.Data;
 using MavAutoKozm.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MavAutoKozm.Controllers
 {
+    [Authorize]
     public class VehiclesController : Controller
     {
         private readonly string _felhasznaloId= "FelhasznaloId";

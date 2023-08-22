@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using MavAutoKozm.Data;
 using MavAutoKozm.Models;
 using static System.Net.WebRequestMethods;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MavAutoKozm.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private readonly string _felhasznaloId = "FelhasznaloId";

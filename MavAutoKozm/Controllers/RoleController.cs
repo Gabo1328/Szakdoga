@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MavAutoKozm.Controllers
 {
+    [Authorize]
     public class RoleController : Controller
     {
         private RoleManager<IdentityRole> _roleManager;
