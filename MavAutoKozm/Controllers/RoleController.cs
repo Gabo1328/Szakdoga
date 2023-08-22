@@ -40,6 +40,20 @@ namespace MavAutoKozm.Controllers
         }
 
         public ViewResult Edit() => View(_userManager.Users.Select(x => new UsersInRole { Name = x.UserName, UserId = x.Id, Member = true }));
-            //new List<UsersInRole>());
+        //new List<UsersInRole>());
+
+        public async Task<IActionResult> DeleteRole(string id)
+        {
+            if (_roleManager == null)
+            {
+                return Problem("Role is null.");
+            }
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role != null)
+            {
+                await _roleManager.DeleteAsync(role);
+            }
+            return RedirectToAction(nameof(Roles));
+        }
     }
 }
