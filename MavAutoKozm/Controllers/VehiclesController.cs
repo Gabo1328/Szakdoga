@@ -75,7 +75,7 @@ namespace MavAutoKozm.Controllers
             {
                
                 _context.Add(vehicle);
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return View(vehicle);

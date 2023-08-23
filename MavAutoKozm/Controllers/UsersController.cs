@@ -9,6 +9,7 @@ using MavAutoKozm.Data;
 using MavAutoKozm.Models;
 using static System.Net.WebRequestMethods;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace MavAutoKozm.Controllers
 {
@@ -17,10 +18,12 @@ namespace MavAutoKozm.Controllers
     {
         private readonly string _felhasznaloId = "FelhasznaloId";
         private readonly MavAutoKozmDbContext _context;
+        private UserManager<IdentityUser> _userManager;
 
-        public UsersController(MavAutoKozmDbContext context)
+        public UsersController(MavAutoKozmDbContext context, UserManager<IdentityUser> userMgr)
         {
             _context = context;
+            _userManager = userMgr;
         }
 
         // GET: Users
@@ -178,6 +181,12 @@ namespace MavAutoKozm.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> ChangeRole(int? appuserid) 
+        {
+            var appuser = await _context.AppUsers.FindAsync(appuserid);
+            var result = await _userManager.AddToRoleAsync(_userManager.FindByIdAsync(appuser.AspNetUserId).Result, "Alkalmazott");
+            return RedirectToAction("Roles","Role");
         }
 
         private bool UserExists(int id)

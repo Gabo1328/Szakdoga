@@ -45,7 +45,12 @@
             <div>
                 <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a> 
             </div>
-            
+                        
+            @if (User.IsInRole("Admin"))
+            {
+                <p></p>
+                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Users" asp-action="ChangeRole" asp-route-appuserid="@Model.ID">Alkalmazottá alakítás</a>
+            }
 
             <p></p>
             <div class="form-group">
