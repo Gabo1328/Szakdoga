@@ -40,24 +40,31 @@
                 <span asp-validation-for="AspNetUserId" class="text-danger"></span>
             </div>
 
-
-            <p></p>
-            <div>
-                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a> 
-            </div>
-                        
-            @if (User.IsInRole("Admin"))
-            {
-                <p></p>
-                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Users" asp-action="ChangeRole" asp-route-appuserid="@Model.ID">Alkalmazottá alakítás</a>
-            }
-
-            <p></p>
-            <div class="form-group">
-                <input type="submit" value="Mentés" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
-                    text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 20%; font-size: 14px; 
-                    margin-bottom: 1%"/>
-            </div>
+            <table>
+                <tr>
+                    <td>
+                        <p></p>
+                        <div>
+                            <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a> 
+                        </div>
+                    </td>
+                    <td>
+                            @if (User.IsInRole("Admin"))
+                        {
+                            <p></p>
+                            <a class="Gomb nav-link text-dark" style="width: 180px" asp-area="" asp-controller="Users" asp-action="ChangeRole" asp-route-appuserid="@Model.ID">Alkalmazottá alakítás</a>
+                        }
+                    </td>
+                    <td>
+                        <p></p>
+                        <div class="form-group">
+                            <input type="submit" value="Mentés" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
+                                text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 130px; font-size: 14px; 
+                                margin-bottom: 1%"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </div>
