@@ -82,8 +82,11 @@ namespace MavAutoKozm.Controllers
                 (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
                 
                 _context.AppUsers.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.SaveChanges();
+                    
+                HttpContext.Session.SetInt32(_felhasznaloId, user.ID);
+
+                return RedirectToAction("Details", new { id = user.ID });
             }
             return View(user);
         }
@@ -117,7 +120,7 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 try
                 {
