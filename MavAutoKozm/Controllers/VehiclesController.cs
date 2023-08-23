@@ -25,6 +25,12 @@ namespace MavAutoKozm.Controllers
         // GET: Vehicles
         public async Task<IActionResult> Index()
         {
+            if (User.IsInRole("Admin") || User.IsInRole("Alkalmazott"))
+                return _context.Vehicles != null ?
+                          View(await _context.Vehicles.ToListAsync()) :
+                          Problem("Entity set 'MavAutoKozmDbContext.Vehicles'  is null.");
+
+
             var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
 
             return _context.Vehicles != null ?
