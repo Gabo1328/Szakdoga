@@ -1,7 +1,9 @@
 ﻿using MavAutoKozm.Data;
 using MavAutoKozm.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Diagnostics;
 
 namespace MavAutoKozm.Controllers
@@ -155,11 +157,13 @@ namespace MavAutoKozm.Controllers
             ViewData["OrderId"] = $"VH-{DateTime.Now.Year}-{order.Id}";
             return View();
         }
-        //ToDo Userekre szétbontani
         public IActionResult Megrendelesek()
         {
             var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
-            var megrendelesek = _context.Orders.Where(rendeles => rendeles.AppUserId == FelhasznaloId);
+            var megrendelesek = _context.Orders.ToList();
+            if(!User.IsInRole("Admin") && !User.IsInRole("Alkalmazott"))               
+                megrendelesek = megrendelesek.Where(rendeles => rendeles.AppUserId == FelhasznaloId).ToList();
+
             return View(megrendelesek);
         }
         //ToDo Egyszerű vásárló csak a saját megrendelését tudja törölni
