@@ -12,6 +12,20 @@
     margin-bottom:1%;
 
 }
+a.Gomb:link, a.Gomb:visited {
+    background-color: lightblue;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 130px;
+    font-size: 14px;
+    margin-bottom: 1%;
+    margin-right: 15px;
+}
 .row{
     display:flex;
     justify-content: center;

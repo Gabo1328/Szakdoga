@@ -1,4 +1,5 @@
 ﻿@model MavAutoKozm.Models.AppUser
+<link rel=" stylesheet " href="~/css/foOldal.css" asp-append-version="true" />
 @{
     ViewData["Title"] = "Szerkesztés";
 }
@@ -8,7 +9,7 @@
 
 
 <hr />
-<div class="row">
+<div>
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -40,7 +41,11 @@
             </div>
 
 
-            <a class="nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a>
+            <p></p>
+            <div>
+                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a> 
+            </div>
+            
 
             <p></p>
             <div class="form-group">

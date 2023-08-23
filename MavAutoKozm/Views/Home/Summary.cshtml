@@ -1,5 +1,5 @@
 ﻿@model MavAutoKozm.Models.SummaryViewModel
-
+<link rel=" stylesheet " href="~/css/foOldal.css" asp-append-version="true" />
 @{
     ViewData["Title"] = "Összegzés";
 }
@@ -141,9 +141,13 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="ServiceSelect">Módosítás</a>
-</div>
-<div>
-    <a asp-action="SaveToDatabase">Megrendelés</a>
-</div>
+<table class="row">
+    <tr>
+        <td>
+            <a class="Gomb nav-link text-dark" asp-action="ServiceSelect">Módosítás</a>
+        </td>
+        <td>
+            <a class="Gomb nav-link text-dark" asp-action="SaveToDatabase">Megrendelés</a>
+        </td>
+    </tr>   
+</table>
