@@ -62,6 +62,7 @@ namespace MavAutoKozm.Controllers
             var role = await _roleManager.FindByIdAsync(id);
             if (role != null)
             {
+                ViewData["RoleName"] = $"{role.Name} szerepkör";
                 //Első megoldás
                 
                 foreach (var item in _userManager.Users)
