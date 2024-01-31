@@ -18,6 +18,10 @@ namespace MavAutoKozm.Controllers
 
         public HomeController(ILogger<HomeController> logger, MavAutoKozmDbContext context)
         {
+            if (context is null)
+            {
+                throw new ArgumentNullException("context");
+            }
             _logger = logger;
             _context = context;
         }
@@ -125,7 +129,7 @@ namespace MavAutoKozm.Controllers
             //atadando_ertek.ID = FelhasznaloId.Value;
             if ((HttpContext is not null) && (HttpContext.Session is not null))
             {
-                if ((_context is null)&&(_context.AppUsers is not null))
+                if ((_context is not null)&&(_context.AppUsers is not null))
                 {
                     atadando_ertek.ActualAppUser = _context.AppUsers.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
                 }
