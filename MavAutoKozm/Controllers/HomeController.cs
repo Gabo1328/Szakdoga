@@ -83,7 +83,7 @@ namespace MavAutoKozm.Controllers
                 //ToDo összegző oldalra navigálás
                 return RedirectToAction(nameof(Summary));
             }
-            return View(serviceSelectViewModel);
+            //return View(serviceSelectViewModel); (ha az if visszakerül ez a sor is kell)
         }
 
         //3 /-el autómatikusan feljön a dokumnetálást és tool tippet adó információ
@@ -123,7 +123,15 @@ namespace MavAutoKozm.Controllers
             atadando_ertek.CompletedTime = DateTime.Now.AddDays(3);
             var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
             //atadando_ertek.ID = FelhasznaloId.Value;
-            atadando_ertek.ActualAppUser = _context.AppUsers.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
+            if ((HttpContext is not null) && (HttpContext.Session is not null))
+            {
+                if ((_context is null)&&(_context.AppUsers is not null))
+                {
+                    atadando_ertek.ActualAppUser = _context.AppUsers.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
+                }
+                
+            }
+            
             var elmentett_igenyek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
             atadando_ertek.Price = elmentett_igenyek.Price;
             atadando_ertek.SelectedVehicle = _context.Vehicles.FirstOrDefault(v => v.Id == elmentett_igenyek.SelectedVehicleId);
@@ -210,7 +218,7 @@ namespace MavAutoKozm.Controllers
             //A cshtml oldalon @ViewData["VehicleNumberPlate"]-val vettük ki ezt az infót
 
             var jarmu =_context.Vehicles.FirstOrDefault(n => n.Id == order.VehicleId);
-            ViewData["VehicleNumberPlate"] = jarmu.NumberPlate;
+            ViewData["VehicleNumberPlate"] = jarmu?.NumberPlate;
 
             return View(order);
         }
