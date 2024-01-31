@@ -45,10 +45,14 @@
             @Html.DisplayNameFor(model => model.Vehicles)
         </dt>
         <dd class="col-sm-10">
-            @foreach (var item in Model.Vehicles)
+            @if (Model.Vehicles is not null)
             {
-                <a asp-controller="Vehicles" asp-action="Details" asp-route-id="@item.Id">@item.NumberPlate</a>
+                @foreach (var item in Model.Vehicles)
+                {
+                    <a asp-controller="Vehicles" asp-action="Details" asp-route-id="@item.Id">@item.NumberPlate</a>
+                }  
             }
+            
         </dd>
     </dl>
 </div>

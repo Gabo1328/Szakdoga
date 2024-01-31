@@ -40,13 +40,23 @@
                 <span asp-validation-for="AspNetUserId" class="text-danger"></span>
             </div>
 
-            <table>
+            <table aria-hidden="true">
                 <tr>
                     <td>
                         <p></p>
-                        <div>
-                            <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a> 
-                        </div>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div>
+                                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járművek</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a>
+                            </div>
+                        }
+                        
                     </td>
                     <td>
                             @if (User.IsInRole("Admin"))
