@@ -21,7 +21,7 @@ namespace MavAutoKozm.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Roles()    
         {
-            //_userManager.GetUserId()
+
             return View(_roleManager.Roles);
         }
 

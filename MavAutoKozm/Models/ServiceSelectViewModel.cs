@@ -36,6 +36,6 @@ namespace MavAutoKozm.Models
 
         public int Price { get; set; }
 
-        public List<Vehicle> Vehicles { get; set; }
+        public List<Vehicle>? Vehicles { get; set; }
     }
 }
