@@ -98,14 +98,39 @@ namespace UnitTest_MavAutoKozm
                     VehicleId = 2,
                     Wax = false,
                 }};
+            mockOrders.Add(new Orders
+            {
+                AppUserId = 2,
+                Category = 1,
+                Ceramic = true,
+                CompletedTime = DateTime.Now,
+                Id = 2,
+                Inner = false,
+                OrderTime = DateTime.Now,
+                Outer = false,
+                Polish = true,
+                Ppf = true,
+                Price = 200000,
+                Quality = 2,
+                VehicleId = 2,
+                Wax = false,
+            });
             _mockRepository.Setup(e => e.Orders).Returns(mockOrders);
-
+            _mockRepository.Setup(e => e.OrdersDelete(It.IsAny<Orders>()));
+            int EredetiErtek = mockOrders.Count;
+            
             //Action
             var result = _homeController.DeleteOrder(1);
+
+            int UjErtek = mockOrders.Count;
+
 
             //Assert
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<Task<IActionResult>>(result);
+            // Eredetileg 2 értéket tettünk bele. A törlés tesztjével 1-et töröltünk.
+            // Tehát a teszt akkor sikeres ha 1 érték marad
+            //Assert.IsTrue(EredetiErtek - UjErtek == 1);
         }
     }
 }
