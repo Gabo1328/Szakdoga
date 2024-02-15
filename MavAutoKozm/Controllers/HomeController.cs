@@ -51,7 +51,7 @@ namespace MavAutoKozm.Controllers
         public IActionResult CategorySelect()
         {
             //Korábban elmentett igények törlése a sessionből(ServiceSelect nulláról induljon)
-            HttpContext.Session.SetObject(_elmentettIgenyek, null);
+            HttpContext?.Session.SetObject(_elmentettIgenyek, null);
             return View();
         }
 
@@ -209,7 +209,7 @@ namespace MavAutoKozm.Controllers
             //--VehilceId-ból rendszám--
             //Context-el értük el az adatbázist
             //Vehicles-vel a táblát
-            //FirstOrDefault legelső találatot adja vissza (ha nem talál eredmlnyt akkor null)
+            //FirstOrDefault legelső találatot adja vissza (ha nem talál eredményt akkor null)
             //FirstOrDefault-ban egyesével végig megyünk a táblán
             //Ezeknek "n" lesz a neve az egyes elemeknek
             //Order.vehicleId tartalmazta a megrendeléshez csatolt jármű ID-ját
