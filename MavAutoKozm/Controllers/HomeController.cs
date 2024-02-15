@@ -168,9 +168,9 @@ namespace MavAutoKozm.Controllers
         }
         public IActionResult Megrendelesek()
         {
-            var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
+            var FelhasznaloId = HttpContext?.Session.GetInt32(_felhasznaloId);
             var megrendelesek = _context.Orders.ToList();
-            if(!User.IsInRole("Admin") && !User.IsInRole("Alkalmazott"))               
+            if (User != null && !User.IsInRole("Admin") && !User.IsInRole("Alkalmazott"))
                 megrendelesek = megrendelesek.Where(rendeles => rendeles.AppUserId == FelhasznaloId).ToList();
 
             return View(megrendelesek);
