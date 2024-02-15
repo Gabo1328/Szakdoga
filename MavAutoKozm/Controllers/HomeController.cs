@@ -29,15 +29,18 @@ namespace MavAutoKozm.Controllers
 
         public IActionResult Index()
         {
-            var AspNetUserId = User.Claims.FirstOrDefault
+            var AspNetUserId = User?.Claims.FirstOrDefault
              (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
-            var Felhasznalo = _context.AppUsers.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
+            if (AspNetUserId != null)
+            {
+                var Felhasznalo = _context.AppUsers.FirstOrDefault(x => x.AspNetUserId == AspNetUserId);
 
-            if (Felhasznalo != null)
-                HttpContext.Session.SetInt32(_felhasznaloId, Felhasznalo.ID);
-            else
-                HttpContext.Session.Remove(_felhasznaloId);
-  
+                if (Felhasznalo != null)
+                    HttpContext.Session.SetInt32(_felhasznaloId, Felhasznalo.ID);
+                else
+                    HttpContext.Session.Remove(_felhasznaloId);
+            }
+
             return View();
         }
 
