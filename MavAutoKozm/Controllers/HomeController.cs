@@ -138,7 +138,7 @@ namespace MavAutoKozm.Controllers
             
             var elmentett_igenyek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
             atadando_ertek.Price = elmentett_igenyek.Price;
-            atadando_ertek.SelectedVehicle = _context.Vehicles.FirstOrDefault(v => v.Id == elmentett_igenyek.SelectedVehicleId);
+            atadando_ertek.SelectedVehicle = _context?.Vehicles?.FirstOrDefault(v => v.Id == elmentett_igenyek.SelectedVehicleId);
             atadando_ertek.SelectedServices = elmentett_igenyek;
             return View(atadando_ertek);
         }
