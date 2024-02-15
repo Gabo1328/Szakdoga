@@ -37,7 +37,7 @@
                 </td>
                 <td>
                     @{
-                        var MegrendelesId = $"VH-{DateTime.Now.Year}-{item.Id}";
+                        var MegrendelesId = $"VH-{item.OrderTime.Year}-{item.Id}";
                         @Html.DisplayFor(modelItem => MegrendelesId)
                       }
 
