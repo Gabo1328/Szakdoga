@@ -127,15 +127,8 @@ namespace MavAutoKozm.Controllers
             atadando_ertek.CompletedTime = DateTime.Now.AddDays(3);
             var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
             //atadando_ertek.ID = FelhasznaloId.Value;
-            if ((HttpContext is not null) && (HttpContext.Session is not null))
-            {
-                if ((_context is not null)&&(_context.AppUsers is not null))
-                {
-                    atadando_ertek.ActualAppUser = _context.AppUsers.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
-                }
-                
-            }
-            
+            atadando_ertek.ActualAppUser = _context?.AppUsers?.FirstOrDefault(v => v.ID == HttpContext.Session.GetInt32(_felhasznaloId));
+
             var elmentett_igenyek = HttpContext.Session.GetObject<ServiceSelectViewModel>(_elmentettIgenyek);
             atadando_ertek.Price = elmentett_igenyek.Price;
             atadando_ertek.SelectedVehicle = _context?.Vehicles?.FirstOrDefault(v => v.Id == elmentett_igenyek.SelectedVehicleId);
