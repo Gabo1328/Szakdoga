@@ -13,6 +13,12 @@ namespace MavAutoKozm.Data
 
         public void OrdersDelete(Orders delete);
         public void OrdersAdd(Orders add);
+        public void VehiclesUpdate(Vehicle update);
+        public void VehiclesDelete(Vehicle delete);
+        public void VehiclesAdd(Vehicle add);
+
+
+
 
 
         //void EditAppUser(AppUser AppUsers);
@@ -44,6 +50,25 @@ namespace MavAutoKozm.Data
             _dbContext.Orders.Add(add);
             _dbContext.SaveChanges();
         }
+
+        public void VehiclesUpdate(Vehicle update)
+        {
+            _dbContext.Vehicles.Update(update);
+            _dbContext.SaveChanges();
+        }
+
+        public void VehiclesDelete(Vehicle delete)
+        {
+            _dbContext.Vehicles.Remove(delete);
+            _dbContext.SaveChanges();
+        }
+
+        public void VehiclesAdd(Vehicle add)
+        {
+            _dbContext.Vehicles.Add(add);
+            _dbContext.SaveChanges();
+        }
+
 
     }
 }

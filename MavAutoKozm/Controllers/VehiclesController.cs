@@ -15,9 +15,11 @@ namespace MavAutoKozm.Controllers
     public class VehiclesController : Controller
     {
         private readonly string _felhasznaloId= "FelhasznaloId";
-        private readonly MavAutoKozmDbContext _context;
+        //private readonly MavAutoKozmDbContext _context;
+        private readonly IMavAutoKozmRepository _context; //Ezzel éri el az adatbázist
 
-        public VehiclesController(MavAutoKozmDbContext context)
+
+        public VehiclesController(IMavAutoKozmRepository context)
         {
             _context = context;
         }
@@ -27,14 +29,14 @@ namespace MavAutoKozm.Controllers
         {
             if (User.IsInRole("Admin") || User.IsInRole("Alkalmazott"))
                 return _context.Vehicles != null ?
-                          View(await _context.Vehicles.ToListAsync()) :
+                          View(_context.Vehicles.ToList()) :
                           Problem("Entity set 'MavAutoKozmDbContext.Vehicles'  is null.");
 
 
             var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
 
             return _context.Vehicles != null ?
-                          View(await _context.Vehicles.Where(jarmu => jarmu.AppUserId == FelhasznaloId).ToListAsync()) :
+                          View(_context.Vehicles.Where(jarmu => jarmu.AppUserId == FelhasznaloId).ToList()) :
                           Problem("Entity set 'MavAutoKozmDbContext.Vehicles'  is null.");
         }
 
@@ -46,8 +48,8 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            var vehicle = await _context.Vehicles
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var vehicle =_context.Vehicles
+                .FirstOrDefault(m => m.Id == id);
             if (vehicle == null)
             {
                 return NotFound();
@@ -74,8 +76,7 @@ namespace MavAutoKozm.Controllers
             if (ModelState.IsValid)
             {
                
-                _context.Add(vehicle);
-                _context.SaveChanges();
+                _context.VehiclesAdd(vehicle);
                 return RedirectToAction(nameof(Index));
             }
             return View(vehicle);
@@ -90,7 +91,7 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            var vehicle = await _context.Vehicles.FindAsync(id);
+            var vehicle = _context.Vehicles.Find(x => x.Id == id);
             if (vehicle == null)
             {
                 return NotFound();
@@ -114,8 +115,7 @@ namespace MavAutoKozm.Controllers
             {
                 try
                 {
-                    _context.Update(vehicle);
-                    await _context.SaveChangesAsync();
+                    _context.VehiclesUpdate(vehicle);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -141,8 +141,8 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            var vehicle = await _context.Vehicles
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var vehicle = _context.Vehicles
+                .FirstOrDefault(m => m.Id == id);
             if (vehicle == null)
             {
                 return NotFound();
@@ -160,13 +160,12 @@ namespace MavAutoKozm.Controllers
             {
                 return Problem("Entity set 'MavAutoKozmDbContext.Vehicles'  is null.");
             }
-            var vehicle = await _context.Vehicles.FindAsync(id);
+            var vehicle = _context.Vehicles.Find(v => v.Id == id);
             if (vehicle != null)
             {
-                _context.Vehicles.Remove(vehicle);
+                _context.VehiclesDelete(vehicle);
             }
             
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
