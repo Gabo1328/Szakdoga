@@ -11,6 +11,9 @@ namespace MavAutoKozm.Data
         List<Orders> Orders { get;}
 
 
+        public void OrdersDelete(Orders delete);
+        public void OrdersAdd(Orders add);
+
         void Save();
 
         //void EditAppUser(AppUser AppUsers);
@@ -33,7 +36,20 @@ namespace MavAutoKozm.Data
 
         public void Save() 
         {
-            _dbContext.SaveChangesAsync();
+            _dbContext.SaveChanges();
         }
+
+        public void OrdersDelete(Orders delete)
+        {
+            _dbContext.Orders.Remove(delete);
+            _dbContext.SaveChanges();
+        }
+
+        public void OrdersAdd(Orders add)
+        {
+            _dbContext.Orders.Add(add);
+            _dbContext.SaveChanges();
+        }
+
     }
 }

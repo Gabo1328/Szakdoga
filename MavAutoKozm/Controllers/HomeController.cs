@@ -158,8 +158,8 @@ namespace MavAutoKozm.Controllers
                 CompletedTime = DateTime.Now.AddDays(3)
             };
 
-            _context.Orders.Add(order);
-            _context.Save();
+            //_context.Orders.Add(order);
+            _context.OrdersAdd(order);
             ViewData["OrderId"] = $"VH-{DateTime.Now.Year}-{order.Id}";
             return View();
         }
@@ -182,10 +182,12 @@ namespace MavAutoKozm.Controllers
             var order = _context.Orders.Find(x=> x.Id == id);
             if (order != null)
             {
-                _context.Orders.Remove(order);
+                //_context.Orders.Remove(order);
+                _context.OrdersDelete(order); 
+                //Mivel nem dbContextet hanem Repositoryt használunk
+                //És a context.orders-re get-et kaptunk ezért írtunk rá módosítani képes függvényeket
             }
 
-            _context.Save();
             return RedirectToAction(nameof(Megrendelesek));
         }
         public async Task<IActionResult> DetailsOrder(int? id)
