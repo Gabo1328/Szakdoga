@@ -6,12 +6,12 @@ namespace MavAutoKozm.Data
 {
     public interface IMavAutoKozmRepository
     {
-        IEnumerable<AppUser> AppUsers { get;}
-        IEnumerable<Vehicle> Vehicles { get;}
-        IEnumerable<Orders> Orders { get;}
+        List<AppUser> AppUsers { get;}
+        List<Vehicle> Vehicles { get;}
+        List<Orders> Orders { get;}
 
 
-        //void AddAppUser(AppUser AppUsers);
+        void Save();
 
         //void EditAppUser(AppUser AppUsers);
 
@@ -27,9 +27,13 @@ namespace MavAutoKozm.Data
 
         }
 
-        public IEnumerable<AppUser> AppUsers => _dbContext.AppUsers.ToList();
-        public IEnumerable<Vehicle> Vehicles => _dbContext.Vehicles.ToList();
-        public IEnumerable<Orders> Orders => _dbContext.Orders.ToList();
+        public List<AppUser> AppUsers => _dbContext.AppUsers.ToList();
+        public List<Vehicle> Vehicles => _dbContext.Vehicles.ToList();
+        public List<Orders> Orders => _dbContext.Orders.ToList();
 
+        public void Save() 
+        {
+            _dbContext.SaveChangesAsync();
+        }
     }
 }

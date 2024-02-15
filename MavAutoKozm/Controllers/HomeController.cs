@@ -13,16 +13,17 @@ namespace MavAutoKozm.Controllers
         //Elírás megelőzés
         private readonly string _felhasznaloId = "FelhasznaloId";
         private readonly string _elmentettIgenyek = "ElmentettIgenyek";
-        private readonly MavAutoKozmDbContext _context; //Ezzel éri el az adatbázist
-        private readonly ILogger<HomeController> _logger;
+        //private readonly MavAutoKozmDbContext _context; //Ezzel éri el az adatbázist
+        private readonly IMavAutoKozmRepository _context; //Ezzel éri el az adatbázist
+        //private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, MavAutoKozmDbContext context)
+        public HomeController(IMavAutoKozmRepository context)
         {
             if (context is null)
             {
                 throw new ArgumentNullException("context");
             }
-            _logger = logger;
+            //_logger = logger;
             _context = context;
         }
 
@@ -158,7 +159,7 @@ namespace MavAutoKozm.Controllers
             };
 
             _context.Orders.Add(order);
-            await _context.SaveChangesAsync();
+            _context.Save();
             ViewData["OrderId"] = $"VH-{DateTime.Now.Year}-{order.Id}";
             return View();
         }
@@ -178,13 +179,13 @@ namespace MavAutoKozm.Controllers
             {
                 return Problem("Entity set 'MavAutoKozmDbContext.Orders'  is null.");
             }
-            var order = await _context.Orders.FindAsync(id);
+            var order = _context.Orders.Find(x=> x.Id == id);
             if (order != null)
             {
                 _context.Orders.Remove(order);
             }
 
-            await _context.SaveChangesAsync();
+            _context.Save();
             return RedirectToAction(nameof(Megrendelesek));
         }
         public async Task<IActionResult> DetailsOrder(int? id)
@@ -194,8 +195,7 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var order = _context.Orders.FirstOrDefault(m => m.Id == id);
             if (order == null)
             {
                 return NotFound();

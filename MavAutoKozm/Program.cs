@@ -12,6 +12,10 @@ builder.Services.AddDbContext<MavAutoKozmDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+// Itt regisztráljuk be a saját repository objektumunkat a saját interface-ünkön keresztül, amit a controller
+//létrejövetelekor példányosít az alkalmazás.
+builder.Services.AddScoped<IMavAutoKozmRepository, MavAutoKozmRepository>();
+
 builder.Services.AddSession(options => {
     options.IdleTimeout = TimeSpan.FromMinutes(1);
 });
