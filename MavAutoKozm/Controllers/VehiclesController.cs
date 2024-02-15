@@ -62,7 +62,9 @@ namespace MavAutoKozm.Controllers
         public IActionResult Create()
         {
             var vehicle = new Vehicle();
-            vehicle.AppUserId = HttpContext.Session.GetInt32(_felhasznaloId).Value; //Figyelem ez Null is lehet
+            if (HttpContext != null)
+                vehicle.AppUserId = HttpContext.Session.GetInt32(_felhasznaloId).Value; //Figyelem ez Null is lehet
+            
             return View(vehicle);
         }
 
