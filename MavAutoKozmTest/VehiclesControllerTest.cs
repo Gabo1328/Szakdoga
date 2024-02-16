@@ -119,6 +119,53 @@ namespace UnitTest_MavAutoKozm
             Assert.IsInstanceOf<Task<IActionResult>>(result);
         }
 
+        [Test]
+        public void EditTestget()
+        {
+            //Arrange
+
+            //Action
+            var result = _vehiclesController.Edit(1);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
+        [Test]
+        public void EditTestPost()
+        {
+            //Arrange
+            Vehicle mockJarmu = new Vehicle
+            {
+                Brand = "Opel",
+                Model = "Astra",
+                AppUserId = 1,
+                Color = "Fekete",
+                NumberPlate = "LCG-017",
+                Type = "ferdehátú"
+            };
+            //Action
+            var result = _vehiclesController.Edit(1);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
+        [Test]
+        public void IndexTest()
+        {
+            //Arrange
+
+            //Action
+            var result = _vehiclesController.Index();
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
     }
 
 
