@@ -51,6 +51,40 @@ namespace UnitTest_MavAutoKozm
             Assert.IsInstanceOf<Task<IActionResult>>(result);
         }
 
+        [Test]
+        public void DeleteTestGet()
+        {
+            //Arrange
+
+            //Action
+            var result = _vehiclesController.Delete(1);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
+        [Test]
+        public void DeleteTestPost()
+        {
+            //Arrange
+            Vehicle mockJarmu = new Vehicle
+            {
+                Brand = "Opel",
+                Model = "Vectra",
+                AppUserId = 1,
+                Color = "Piros",
+                NumberPlate = "KYW-675",
+                Type = "szedán"
+            };
+            //Action
+            var result = _vehiclesController.Create(mockJarmu);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
     }
 
 
