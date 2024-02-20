@@ -81,7 +81,7 @@ namespace UnitTest_MavAutoKozm
                 Type = "szedán"
             };
             //Action
-            var result = _vehiclesController.Create(mockJarmu);
+            var result = _vehiclesController.Delete(1);
 
             //Assert
             Assert.IsNotNull(result);
@@ -157,6 +157,22 @@ namespace UnitTest_MavAutoKozm
         }
 
         [Test]
+        public async Task DetailsTestNullOrder()
+        {
+            // Arrange
+            List<Orders> mockOrders = null;
+
+            _mockRepository.Setup(e => e.Orders).Returns(mockOrders);
+
+            // Action
+            var result = await _vehiclesController.Details(1);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
+        }
+
+        [Test]
         public void EditTestget()
         {
             //Arrange
@@ -188,6 +204,31 @@ namespace UnitTest_MavAutoKozm
             //Assert
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
+        [Test]
+        public async Task EditTestPostNotEqualId()
+        {
+            // Arrange
+            Vehicle mockVehicle = new Vehicle
+            {
+                Id = 1,
+                Brand = "Opel",
+                Model = "Astra",
+                AppUserId = 1,
+                Color = "Fekete",
+                NumberPlate = "LCG-017",
+                Type = "ferdehátú"
+            };
+
+            _mockRepository.Setup(x => x.VehiclesUpdate(It.IsAny<Vehicle>()));
+
+            // Action
+            var result = await _vehiclesController.Edit(2, mockVehicle);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
         }
 
         [Test]
