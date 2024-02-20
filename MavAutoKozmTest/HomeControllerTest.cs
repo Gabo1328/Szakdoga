@@ -1,6 +1,7 @@
 using MavAutoKozm.Controllers;
 using MavAutoKozm.Data;
 using MavAutoKozm.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 
@@ -253,6 +254,60 @@ namespace UnitTest_MavAutoKozm
             // Assert
             // Expected price calculation: (6 selected services) * (10000) * (5 quality + 1) = 360000
             Assert.AreEqual(360000, result);
+        }
+
+        [Test]
+        public async Task DeleteTest_NullOrder()
+        {
+            // Arrange
+            int mockOrderId = 1;
+
+            List<Orders> mockOrders = null;
+
+            _mockRepository.Setup(x => x.Orders).Returns(mockOrders); // Simulate null list
+
+            // Action
+            var result = await _homeController.DeleteOrder(mockOrderId);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<ObjectResult>(result);
+        }
+        [Test]
+        public async Task DeleteTest_OrderSuccess()
+        {
+            // Arrange
+            int mockOrderId = 1;
+
+            List<Orders> mockOrders = new List<Orders>
+            {
+                new Orders
+                {
+                    AppUserId = 1,
+                    Category = 0,
+                    Ceramic = true,
+                    CompletedTime = DateTime.Now,
+                    Id = 1,
+                    Inner = true,
+                    OrderTime = DateTime.Now,
+                    Outer = false,
+                    Polish = true,
+                    Ppf = true,
+                    Price = 100000,
+                    Quality = 2,
+                    VehicleId = 2,
+                    Wax = false,
+                }
+            };
+
+            _mockRepository.Setup(x => x.Orders).Returns(mockOrders); // Simulate null list
+
+            // Action
+            var result = await _homeController.DeleteOrder(mockOrderId);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<RedirectToActionResult>(result);
         }
     }
 }
