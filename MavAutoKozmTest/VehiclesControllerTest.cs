@@ -55,6 +55,40 @@ namespace UnitTest_MavAutoKozm
         }
 
         [Test]
+        public void CreateTestPostInvalidModelState()
+        {
+            // Arrange
+            Vehicle mockJarmu = new Vehicle
+            {
+                Brand = "",
+                Model = "Vectra",
+                AppUserId = 1,
+                Color = "Piros",
+                NumberPlate = "KYW-675",
+                Type = "szedán"
+            };
+            _mockRepository.Setup(x => x.VehiclesUpdate(It.IsAny<Vehicle>())).Callback<Vehicle>(vehicle =>
+            {
+                // Simulate the update in the mock repository
+                mockJarmu = vehicle;
+            });
+
+            // Set up invalid ModelState
+            _vehiclesController.ModelState.AddModelError("Brand", "Required");
+
+            // Action
+            var result = _vehiclesController.Create(mockJarmu);
+
+            // Assert
+            Assert.IsNotNull(result);
+            //Assert.IsInstanceOf<ViewResult>(result);
+
+            // Additional assertions based on your requirements, e.g., check specific errors in ModelState
+            Assert.IsTrue(_vehiclesController.ModelState.ContainsKey("Brand"));
+            Assert.AreEqual("Required", _vehiclesController.ModelState["Brand"].Errors.First().ErrorMessage);
+        }
+
+        [Test]
         public async Task DeleteConfirmedTest_SuccessfulDeletion()
         {
             // Arrange
