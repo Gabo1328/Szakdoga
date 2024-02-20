@@ -180,6 +180,22 @@ namespace UnitTest_MavAutoKozm
         }
 
         [Test]
+        public async Task DetailsOrder_ReturnsNotFoundResult_WhenIdIsNull()
+        {
+            // Arrange
+            List<Orders> mockOrders = null;          
+
+            _mockRepository.Setup(e => e.Orders).Returns(mockOrders);
+
+            // Action
+            var result = await _homeController.DetailsOrder(1);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<NotFoundResult>(result); // Figyelj a Result property-re
+        }
+
+        [Test]
         public void CategorySelect_ReturnsViewResult()
         {
             // Arrange
