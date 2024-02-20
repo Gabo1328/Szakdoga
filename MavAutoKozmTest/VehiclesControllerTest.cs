@@ -1,9 +1,11 @@
 ﻿using MavAutoKozm.Controllers;
 using MavAutoKozm.Data;
 using MavAutoKozm.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Differencing;
 using Moq;
+using NUnit.Framework.Interfaces;
 
 namespace UnitTest_MavAutoKozm
 {
@@ -120,6 +122,41 @@ namespace UnitTest_MavAutoKozm
         }
 
         [Test]
+        public async Task DetailsTestNullId()
+        {
+            // Arrange
+            List<Orders> mockOrders = new List<Orders>
+            {
+                new Orders
+                {
+                    AppUserId = 1,
+                    Category = 0,
+                    Ceramic = true,
+                    CompletedTime = DateTime.Now,
+                    Id = 1,
+                    Inner = true,
+                    OrderTime = DateTime.Now,
+                    Outer = false,
+                    Polish = true,
+                    Ppf = true,
+                    Price = 100000,
+                    Quality = 2,
+                    VehicleId = 2,
+                    Wax = false,
+                }
+            };
+
+            _mockRepository.Setup(e => e.Orders).Returns(mockOrders);
+
+            // Action
+            var result = await _vehiclesController.Details(null);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
+        }
+
+        [Test]
         public void EditTestget()
         {
             //Arrange
@@ -165,6 +202,7 @@ namespace UnitTest_MavAutoKozm
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<Task<IActionResult>>(result);
         }
+
 
     }
 
