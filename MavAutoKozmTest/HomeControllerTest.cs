@@ -192,5 +192,67 @@ namespace UnitTest_MavAutoKozm
             Assert.IsNotNull(result);
             //Assert.IsInstanceOf<Task<ViewResult>>(result);
         }
+
+        [Test]
+        public void GetPrice_CalculatePriceCorrectly()
+        {
+            // Arrange
+            var serviceSelectViewModel = new ServiceSelectViewModel
+            {
+                Outer = true,
+                Inner = true,
+                Polish = false,
+                Wax = true,
+                Ceramic = false,
+                Ppf = true,
+                Quality = 2
+            };
+
+            // Act
+            var result = _homeController.GetPrice(serviceSelectViewModel);
+
+            // Assert
+            // Expected price calculation: (3 selected services) * (10000) * (2 quality + 1) = 60000
+            Assert.AreEqual(120000, result);
+        }
+
+        [Test]
+        public void GetPrice_NoSelectedServices_ReturnZeroPrice()
+        {
+            // Arrange
+            var serviceSelectViewModel = new ServiceSelectViewModel();
+
+            // Act
+            var result = _homeController.GetPrice(serviceSelectViewModel);
+
+            // Assert
+            // No selected services, so the price should be zero
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void GetPrice_MaxQuality_ReturnsCorrectPrice()
+        {
+            // Arrange
+            var serviceSelectViewModel = new ServiceSelectViewModel
+            {
+                Outer = true,
+                Inner = true,
+                Polish = true,
+                Wax = true,
+                Ceramic = true,
+                Ppf = true,
+                Quality = 5
+            };
+
+            // Act
+
+            //Action
+            var result = _homeController.GetPrice(serviceSelectViewModel);
+
+            // Assert
+            // Expected price calculation: (6 selected services) * (10000) * (5 quality + 1) = 360000
+            Assert.AreEqual(360000, result);
+        }
     }
 }
