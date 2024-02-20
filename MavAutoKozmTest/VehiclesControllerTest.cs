@@ -55,24 +55,13 @@ namespace UnitTest_MavAutoKozm
         }
 
         [Test]
-        public void DeleteTestGet()
+        public async Task DeleteConfirmedTest_SuccessfulDeletion()
         {
-            //Arrange
-
-            //Action
-            var result = _vehiclesController.Delete(1);
-
-            //Assert
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOf<Task<IActionResult>>(result);
-        }
-
-        [Test]
-        public void DeleteTestPost()
-        {
-            //Arrange
-            Vehicle mockJarmu = new Vehicle
+            // Arrange
+            int mockVehicleId = 1;
+            Vehicle mockVehicle = new Vehicle
             {
+                Id = mockVehicleId,
                 Brand = "Opel",
                 Model = "Vectra",
                 AppUserId = 1,
@@ -80,12 +69,42 @@ namespace UnitTest_MavAutoKozm
                 NumberPlate = "KYW-675",
                 Type = "szedán"
             };
-            //Action
-            var result = _vehiclesController.Delete(1);
 
-            //Assert
+            _mockRepository.Setup(x => x.VehiclesDelete(It.IsAny<Vehicle>())).Callback<Vehicle>(vehicle =>
+            {
+                // Simulate the deletion in the mock repository
+                _mockRepository.Object.Vehicles.Remove(vehicle);
+            });
+
+            _mockRepository.Setup(x => x.Vehicles).Returns(new List<Vehicle> { mockVehicle });
+
+            // Action
+            var result = await _vehiclesController.DeleteConfirmed(mockVehicleId);
+
+            // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOf<Task<IActionResult>>(result);
+            Assert.IsInstanceOf<RedirectToActionResult>(result);
+
+            // Check that the vehicle is removed from the repository
+            Assert.IsEmpty(_mockRepository.Object.Vehicles);
+        }
+
+        [Test]
+        public async Task DeleteConfirmedTest_NullVehicle()
+        {
+            // Arrange
+            int mockVehicleId = 1;
+
+            List<Vehicle> mockVehicles = null;
+
+            _mockRepository.Setup(x => x.Vehicles).Returns(mockVehicles); // Simulate null list
+
+            // Action
+            var result = await _vehiclesController.DeleteConfirmed(mockVehicleId);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<ObjectResult>(result);
         }
 
         [Test]
@@ -186,11 +205,12 @@ namespace UnitTest_MavAutoKozm
         }
 
         [Test]
-        public void EditTestPost()
+        public async Task EditTestPost_VerifyBrandChange()
         {
-            //Arrange
+            // Arrange
             Vehicle mockJarmu = new Vehicle
             {
+                Id = 1,
                 Brand = "Opel",
                 Model = "Astra",
                 AppUserId = 1,
@@ -198,12 +218,56 @@ namespace UnitTest_MavAutoKozm
                 NumberPlate = "LCG-017",
                 Type = "ferdehátú"
             };
-            //Action
-            var result = _vehiclesController.Edit(1);
 
-            //Assert
+            _mockRepository.Setup(x => x.VehiclesUpdate(It.IsAny<Vehicle>())).Callback<Vehicle>(vehicle =>
+            {
+                // Simulate the update in the mock repository
+                mockJarmu.Brand = vehicle.Brand;
+            });
+
+            // Clear ModelState to ensure a valid ModelState
+            _vehiclesController.ModelState.Clear();
+
+            // Action
+            var result = await _vehiclesController.Edit(1, mockJarmu);
+
+            // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOf<Task<IActionResult>>(result);
+            Assert.AreNotSame("Ferrari", mockJarmu.Brand);
+            Assert.IsInstanceOf<RedirectToActionResult>(result);
+        }
+
+        [Test]
+        public async Task EditTestPost_InvalidModelState()
+        {
+            // Arrange
+            Vehicle mockJarmu = new Vehicle
+            {
+                Id = 1,
+                Brand = "Opel",
+                Model = "Astra",
+                AppUserId = 1,
+                Color = "Fekete",
+                NumberPlate = "LCG-017",
+                Type = "ferdehátú"
+            };
+
+            _mockRepository.Setup(x => x.VehiclesUpdate(It.IsAny<Vehicle>())).Callback<Vehicle>(vehicle =>
+            {
+                // Simulate the update in the mock repository
+                mockJarmu.Brand = "";
+            });
+
+            // Clear ModelState to ensure a valid ModelState
+            _vehiclesController.ModelState.AddModelError("Brand","Required");
+
+            // Action
+            var result = await _vehiclesController.Edit(1, mockJarmu);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreSame("Opel", mockJarmu.Brand);
+            Assert.IsInstanceOf<ViewResult>(result);
         }
 
         [Test]
