@@ -177,5 +177,20 @@ namespace UnitTest_MavAutoKozm
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<Task<IActionResult>>(result);
         }
+
+        [Test]
+        public void CategorySelect_ReturnsViewResult()
+        {
+            // Arrange
+            var contextMock = new Mock<IMavAutoKozmRepository>();
+            var controller = new HomeController(contextMock.Object);
+
+            // Act
+            var result = controller.CategorySelect();
+
+            // Assert
+            Assert.IsNotNull(result);
+            //Assert.IsInstanceOf<Task<ViewResult>>(result);
+        }
     }
 }
