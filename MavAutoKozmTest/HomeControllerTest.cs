@@ -135,6 +135,19 @@ namespace UnitTest_MavAutoKozm
         }
 
         [Test]
+        public void SaveToDatabaseTest()
+        {
+            //Arrange
+
+            //Action
+            var result = _homeController.SaveToDatabase();
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
+        [Test]
         public void CategorySelectTest()
         {
             //Arrange
