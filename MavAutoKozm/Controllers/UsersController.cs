@@ -17,10 +17,12 @@ namespace MavAutoKozm.Controllers
     public class UsersController : Controller
     {
         private readonly string _felhasznaloId = "FelhasznaloId";
-        private readonly MavAutoKozmDbContext _context;
+        //private readonly MavAutoKozmDbContext _context;
+        private readonly IMavAutoKozmRepository _context; //Ezzel éri el az adatbázist
+
         private UserManager<IdentityUser> _userManager;
 
-        public UsersController(MavAutoKozmDbContext context, UserManager<IdentityUser> userMgr)
+        public UsersController(IMavAutoKozmRepository context, UserManager<IdentityUser> userMgr)
         {
             _context = context;
             _userManager = userMgr;
@@ -32,7 +34,7 @@ namespace MavAutoKozm.Controllers
             //Dolgozó vagy Adminnak teljes lista jelenik meg
             if (User.IsInRole("Admin") || User.IsInRole("Alkalmazott"))
                 return _context.AppUsers != null ?
-                          View(await _context.AppUsers.ToListAsync()) :
+                          View(_context.AppUsers.ToList()) :
                           Problem("Entity set 'MavAutoKozmDbContext.Users'  is null.");
 
             //Ha nincs felhasználója akkor létrehozunk egyet
@@ -56,12 +58,17 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            var user = await _context.AppUsers.Include(v => v.Vehicles)
-                .FirstOrDefaultAsync(m => m.ID == id);
+            //var user = await _context.AppUsers.Include(v => v.Vehicles)
+            //   .FirstOrDefaultAsync(m => m.ID == id);  "Az Include-al egyszerűen hozzáadtuk a User.hez a jármű táblát"
+              
+            var user = _context.AppUsers.FirstOrDefault(m => m.ID == id);
+            
             if (user == null)
             {
                 return NotFound();
             }
+
+            user.Vehicles =_context.Vehicles.FindAll(v => v.AppUserId == id);
 
             return View(user);
         }
@@ -84,9 +91,8 @@ namespace MavAutoKozm.Controllers
                 user.AspNetUserId = User.Claims.FirstOrDefault
                 (x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
                 
-                _context.AppUsers.Add(user);
-                _context.SaveChanges();
-                    
+                _context.AppUsersAdd(user);
+                
                 HttpContext.Session.SetInt32(_felhasznaloId, user.ID);
 
                 return RedirectToAction("Details", new { id = user.ID });
@@ -102,7 +108,7 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            var user = await _context.AppUsers.FindAsync(id);//Include(v => v.Vehicles)
+            var user = _context.AppUsers.Find(x => x.ID == id);//Include(v => v.Vehicles)
             if (user == null)
             {
                 return NotFound();
@@ -127,8 +133,7 @@ namespace MavAutoKozm.Controllers
             {
                 try
                 {
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
+                    _context.AppUsersUpdate(user);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -154,8 +159,8 @@ namespace MavAutoKozm.Controllers
                 return NotFound();
             }
 
-            var user = await _context.AppUsers
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var user = _context.AppUsers
+                .FirstOrDefault(m => m.ID == id);
             if (user == null)
             {
                 return NotFound();
@@ -173,18 +178,17 @@ namespace MavAutoKozm.Controllers
             {
                 return Problem("Entity set 'MavAutoKozmDbContext.AppUsers'  is null.");
             }
-            var user = await _context.AppUsers.FindAsync(id);
+            var user = _context.AppUsers.Find(x => x.ID == id);
             if (user != null)
             {
-                _context.AppUsers.Remove(user);
+                _context.AppUsersDelete(user);
             }
             
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> ChangeRole(int? appuserid) 
         {
-            var appuser = await _context.AppUsers.FindAsync(appuserid);
+            var appuser = _context.AppUsers.Find(x => x.ID == appuserid);
             var result = await _userManager.AddToRoleAsync(_userManager.FindByIdAsync(appuser.AspNetUserId).Result, "Alkalmazott");
             return RedirectToAction("Roles","Role");
         }
