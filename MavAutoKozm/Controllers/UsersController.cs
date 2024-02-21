@@ -31,15 +31,17 @@ namespace MavAutoKozm.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            //Dolgozó vagy Adminnak teljes lista jelenik meg
-            if (User.IsInRole("Admin") || User.IsInRole("Alkalmazott"))
-                return _context.AppUsers != null ?
-                          View(_context.AppUsers.ToList()) :
-                          Problem("Entity set 'MavAutoKozmDbContext.Users'  is null.");
-
+            if (User != null)
+            {
+                //Dolgozó vagy Adminnak teljes lista jelenik meg
+                if (User.IsInRole("Admin") || User.IsInRole("Alkalmazott"))
+                    return _context.AppUsers != null ?
+                              View(_context.AppUsers.ToList()) :
+                              Problem("Entity set 'MavAutoKozmDbContext.Users'  is null.");
+            }
             //Ha nincs felhasználója akkor létrehozunk egyet
             //Ha van akkor meg a Details-be küldjük
-            var FelhasznaloId = HttpContext.Session.GetInt32(_felhasznaloId);
+            var FelhasznaloId = HttpContext?.Session.GetInt32(_felhasznaloId);
             if (FelhasznaloId==null)
             {
                 return RedirectToAction("Create");
@@ -193,7 +195,7 @@ namespace MavAutoKozm.Controllers
             return RedirectToAction("Roles","Role");
         }
 
-        private bool UserExists(int id)
+        public bool UserExists(int id)
         {
           return (_context.AppUsers?.Any(e => e.ID == id)).GetValueOrDefault();
         }
