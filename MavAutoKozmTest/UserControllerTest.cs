@@ -158,5 +158,127 @@ namespace UnitTest_MavAutoKozm
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<RedirectToActionResult>(result);
         }
+
+        [Test]
+        public async Task DetailsTestNullId()
+        {
+            // Arrange
+            List<Orders> mockOrders = new List<Orders>
+            {
+                new Orders
+                {
+                    AppUserId = 1,
+                    Category = 0,
+                    Ceramic = true,
+                    CompletedTime = DateTime.Now,
+                    Id = 1,
+                    Inner = true,
+                    OrderTime = DateTime.Now,
+                    Outer = false,
+                    Polish = true,
+                    Ppf = true,
+                    Price = 100000,
+                    Quality = 2,
+                    VehicleId = 2,
+                    Wax = false,
+                }
+            };
+
+            _mockRepository.Setup(e => e.Orders).Returns(mockOrders);
+
+            // Action
+            var result = await _userController.Details(null);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
+        }
+
+        [Test]
+        public async Task DetailsTestNullOrder()
+        {
+            // Arrange
+            List<Orders> mockOrders = null;
+
+            _mockRepository.Setup(e => e.Orders).Returns(mockOrders);
+
+            // Action
+            var result = await _userController.Details(1);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
+        }
+
+        [Test]
+        public void EditTestget()
+        {
+            //Arrange
+
+            //Action
+            var result = _userController.Edit(1);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<Task<IActionResult>>(result);
+        }
+
+        [Test]
+        public async Task EditTestPostNotEqualId()
+        {
+            // Arrange
+            AppUser mockAppUsers = new AppUser
+            {
+                AspNetUserId = "1ererde",
+                Email = "www.wddfdf",
+                FirstMidName = "László",
+                LastName = "Kiss",
+                ID = 3,
+                PhoneNumber = "1234567890",
+                Vehicles = new List<Vehicle>()
+            };
+
+            _mockRepository.Setup(x => x.VehiclesUpdate(It.IsAny<Vehicle>()));
+
+            // Action
+            var result = await _userController.Edit(2, mockAppUsers);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<NotFoundResult>(result);
+        }
+
+        [Test]
+        public async Task EditTestPost_VerifyMailChange()
+        {
+            // Arrange
+            AppUser mockAppUsers = new AppUser
+            {
+                AspNetUserId = "1ererde",
+                Email = "www.wddfdf",
+                FirstMidName = "László",
+                LastName = "Kiss",
+                ID = 3,
+                PhoneNumber = "1234567890",
+                Vehicles = new List<Vehicle>()
+            };
+
+            _mockRepository.Setup(x => x.AppUsersUpdate(It.IsAny<AppUser>())).Callback<AppUser>(appuser =>
+            {
+                // Simulate the update in the mock repository
+                mockAppUsers.Email = appuser.Email;
+            });
+
+            // Clear ModelState to ensure a valid ModelState
+            _userController.ModelState.Clear();
+
+            // Action
+            var result = await _userController.Edit(3, mockAppUsers);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreNotSame("www.wd", mockAppUsers.Email);
+            Assert.IsInstanceOf<RedirectToActionResult>(result);
+        }
     }
 }
