@@ -52,7 +52,10 @@ namespace MavAutoKozm.Controllers
             }
         }
 
-        // GET: Users/Details/5
+        /// <summary>
+        /// Felhasználók részletei
+        /// </summary>
+        /// <param name="id">userId</param>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.AppUsers == null)
@@ -75,13 +78,19 @@ namespace MavAutoKozm.Controllers
             return View(user);
         }
 
-        // GET: Users/Create
+        /// <summary>
+        /// Felhasználók létrehozása
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create()
         {                      
             return View();
         }
 
-        // POST: Users/Create
+        /// <summary>
+        /// Felhasználók létrehozása
+        /// </summary>
+        /// <param name="user">userId</param>
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -102,7 +111,10 @@ namespace MavAutoKozm.Controllers
             return View(user);
         }
 
-        // GET: Users/Edit/5
+        /// <summary>
+        /// Felhasználók szerkesztése
+        /// </summary>
+        /// <param name="id">userId</param>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.AppUsers == null)
@@ -119,7 +131,11 @@ namespace MavAutoKozm.Controllers
             return View(user);
         }
 
-        // POST: Users/Edit/5
+        /// <summary>
+        /// Felhasználók szerkesztése
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="user"></param>
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -153,7 +169,10 @@ namespace MavAutoKozm.Controllers
             return View(user);
         }
 
-        // GET: Users/Delete/5
+        /// <summary>
+        /// Felhasználók törlése
+        /// </summary>
+        /// <param name="id">userId</param>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.AppUsers == null)
@@ -171,7 +190,10 @@ namespace MavAutoKozm.Controllers
             return View(user);
         }
 
-        // POST: Users/Delete/5
+        /// <summary>
+        /// Felhasználók törlése
+        /// </summary>
+        /// <param name="id">userId</param>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

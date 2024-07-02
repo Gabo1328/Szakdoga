@@ -40,7 +40,10 @@ namespace MavAutoKozm.Controllers
                           Problem("Entity set 'MavAutoKozmDbContext.Vehicles'  is null.");
         }
 
-        // GET: Vehicles/Details/5
+        /// <summary>
+        /// Járművek részleteit mutatja
+        /// </summary>
+        /// <param name="id">autoId</param>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Vehicles == null)
@@ -58,7 +61,10 @@ namespace MavAutoKozm.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Create
+        /// <summary>
+        /// Járművek létrehozása
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create()
         {
             var vehicle = new Vehicle();
@@ -68,7 +74,10 @@ namespace MavAutoKozm.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Create
+        /// <summary>
+        /// Járművek létrehozása
+        /// </summary>
+        /// <returns></returns>
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -85,7 +94,10 @@ namespace MavAutoKozm.Controllers
 
         }
 
-        // GET: Vehicles/Edit/5
+        /// <summary>
+        /// Járművek szerkesztése
+        /// </summary>
+        /// <param name="id">autoId</param>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Vehicles == null)
@@ -101,7 +113,10 @@ namespace MavAutoKozm.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Edit/5
+        /// <summary>
+        /// Járművek szerkesztése
+        /// </summary>
+        /// <param name="id">autoId</param>
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -135,7 +150,10 @@ namespace MavAutoKozm.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Delete/5
+        /// <summary>
+        /// Járművek törlése
+        /// </summary>
+        /// <param name="id">autoId</param>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Vehicles == null)
@@ -153,7 +171,10 @@ namespace MavAutoKozm.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Delete/5
+        /// <summary>
+        /// Járművek törlése
+        /// </summary>
+        /// <param name="id">autoId</param>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
