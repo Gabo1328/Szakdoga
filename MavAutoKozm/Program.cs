@@ -12,17 +12,17 @@ builder.Services.AddDbContext<MavAutoKozmDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-// Itt regisztráljuk be a saját repository objektumunkat a saját interface-ünkön keresztül, amit a controller
-//létrejövetelekor példányosít az alkalmazás.
+// Itt regisztrï¿½ljuk be a sajï¿½t repository objektumunkat a sajï¿½t interface-ï¿½nkï¿½n keresztï¿½l, amit a controller
+//lï¿½trejï¿½vetelekor pï¿½ldï¿½nyosï¿½t az alkalmazï¿½s.
 builder.Services.AddScoped<IMavAutoKozmRepository, MavAutoKozmRepository>();
 
 builder.Services.AddSession(options => {
     options.IdleTimeout = TimeSpan.FromMinutes(1);
 });
 
-//ha itt "true" szerepel akkor nekünk kell kézzel elfogadni a reg után az új "User-t" a: dbo.AspNetUsers/EmailConfirmed mezõben
-//másik lehetõség egy email-es vagy sms-es aktiválás után a program írja át "true"-ra
-//ha itt "false" szerepel ellenõrzés nélkül reg után be lehet jelentkezni
+//ha itt "true" szerepel akkor nekï¿½nk kell kï¿½zzel elfogadni a reg utï¿½n az ï¿½j "User-t" a: dbo.AspNetUsers/EmailConfirmed mezï¿½ben
+//mï¿½sik lehetï¿½sï¿½g egy email-es vagy sms-es aktivï¿½lï¿½s utï¿½n a program ï¿½rja ï¿½t "true"-ra
+//ha itt "false" szerepel ellenï¿½rzï¿½s nï¿½lkï¿½l reg utï¿½n be lehet jelentkezni
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
