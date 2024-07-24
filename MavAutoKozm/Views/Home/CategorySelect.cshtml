@@ -2,9 +2,11 @@
     ViewData["Title"] = "Kategória";
 }
 <link rel="stylesheet" href="~/css/order.css" />
-<div class="text-center">
-    <h1>@ViewData["Title"]</h1>
-</div>
+<p>
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+</p>
 <table style="width:100%" aria-hidden="true">
         <tr>
             <td>
@@ -12,7 +14,7 @@
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Car)">
                         <img src="~/css/image/auto.jpg" alt="Személyautó" style="width:350px;height:200px;"/>
-                        <div class="overlay">
+                        <div class="overlayj">
                             <div class="text">Személyautó</div>
                         </div>
                     </a>
@@ -24,7 +26,7 @@
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Van)">
                         <img src="~/css/image/van1.jpg" alt="Teherautó" style="width:350px;height:200px;"/>
-                        <div class="overlay">
+                        <div class="overlayl">
                             <div class="text">Teherautó</div>
                         </div>
                     </a>
@@ -38,7 +40,7 @@
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Truck)">
                         <img src="~/css/image/truck.jpeg.jpg" alt="Kamion" style="width:350px;height:200px;"/>
-                        <div class="overlay">
+                        <div class="overlayf">
                             <div class="text">Kamion</div>
                         </div>
                     </a>
@@ -50,7 +52,7 @@
                     <p>
                         <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Bike)">
                             <img src="~/css/image/bike.jpg" alt="Motor" style="width:350px;height:200px;"/>
-                        <div class="overlay">
+                        <div class="overlayb">
                             <div class="text">Motor</div>
                         </div>
                         </a>
