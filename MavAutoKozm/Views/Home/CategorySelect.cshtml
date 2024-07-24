@@ -1,41 +1,64 @@
 ﻿@{
     ViewData["Title"] = "Kategória";
 }
+<link rel="stylesheet" href="~/css/order.css" />
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+
+        
+
+</div>
 <table style="width:100%" aria-hidden="true">
         <tr>
             <td>
-                <h1 class="display-5">Személyautó </h1>
+            <div class="container">
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Car)">
-                    <img src="~/css/image/auto.jpg" alt="Személyautó" style="width:350px;height:200px;border: 2px solid black;" />
+                        <img src="~/css/image/auto.jpg" alt="Kamion" style="width:350px;height:200px;border: 2px solid black;" />
+                        <div class="overlay">
+                            <div class="text">Személyautó</div>
+                        </div>
                     </a>
                 </p>
+            </div>
             </td>
             <td>
-                <h2 class="display-5">Teherautó </h2>
+            <div class="container">
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Van)">
-                    <img src="~/css/image/van1.jpg" alt="Teherautó" style="width:350px;height:200px;border: 2px solid black;" />
+                        <img src="~/css/image/van1.jpg" alt="Kamion" style="width:350px;height:200px;border: 2px solid black;" />
+                        <div class="overlay">
+                            <div class="text">Teherautó</div>
+                        </div>
                     </a>
                 </p>
+            </div>
             </td>
         </tr>
         <tr>
             <td>
-                <h2 class="display-5">Kamion </h2>
+            <div class="container">
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Truck)">
-                    <img src="~/css/image/truck.jpeg.jpg" alt="Kamion" style="width:350px;height:200px;border: 2px solid black;" />
+                        <img src="~/css/image/truck.jpeg.jpg" alt="Kamion" style="width:350px;height:200px;border: 2px solid black;" />
+                        <div class="overlay">
+                            <div class="text">Kamion</div>
+                        </div>
                     </a>
                 </p>
+            </div>
             </td>
             <td>
-                <h2 class="display-5">Motor </h2>
-                <p>
-                    <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Bike)">
-                        <img src="~/css/image/bike.jpg" alt="Motor" style="width:350px;height:200px;border: 2px solid black;" />
-                    </a>
-                </p>
+            <div class="container">
+                    <p>
+                        <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Bike)">
+                            <img src="~/css/image/bike.jpg" alt="Motor" style="width:350px;height:200px;border: 2px solid black;" />
+                        <div class="overlay">
+                            <div class="text">Motor</div>
+                        </div>
+                        </a>
+                    </p>
+            </div>
             </td>
         </tr>
 </table>
