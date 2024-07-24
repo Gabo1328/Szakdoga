@@ -4,9 +4,6 @@
 <link rel="stylesheet" href="~/css/order.css" />
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
-
-        
-
 </div>
 <table style="width:100%" aria-hidden="true">
         <tr>
@@ -14,7 +11,7 @@
             <div class="container">
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Car)">
-                        <img src="~/css/image/auto.jpg" alt="Kamion" style="width:350px;height:200px;border: 2px solid black;" />
+                        <img src="~/css/image/auto.jpg" alt="Személyautó" style="width:350px;height:200px;border: 2px solid black;" />
                         <div class="overlay">
                             <div class="text">Személyautó</div>
                         </div>
@@ -26,7 +23,7 @@
             <div class="container">
                 <p>
                     <a asp-action="ServiceSelect" asp-route-category="@Convert.ToInt32(NeedsEnums.CategoryType.Van)">
-                        <img src="~/css/image/van1.jpg" alt="Kamion" style="width:350px;height:200px;border: 2px solid black;" />
+                        <img src="~/css/image/van1.jpg" alt="Teherautó" style="width:350px;height:200px;border: 2px solid black;" />
                         <div class="overlay">
                             <div class="text">Teherautó</div>
                         </div>

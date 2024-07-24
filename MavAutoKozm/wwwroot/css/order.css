@@ -21,7 +21,7 @@
     transition: .5s ease;
 }
 
-.container:hover .overlay {
+.container:hover > .overlay {
     bottom: 0;
     height: 100%;
 }
