@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace MavAutoKozm.Controllers
 {
@@ -223,6 +224,25 @@ namespace MavAutoKozm.Controllers
             ViewData["VehicleNumberPlate"] = jarmu?.NumberPlate;
 
             return View(order);
+        }
+
+        public IActionResult ChangeLanguage(string lang)
+        {
+            if (!string.IsNullOrEmpty(lang))
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(lang);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+                lang = "en";
+            }
+            Response.Cookies.Append("Language", lang);
+            return Redirect(Request.GetTypedHeaders().Referer.ToString());
+
+
         }
     }
 }
