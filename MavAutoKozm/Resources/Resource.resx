@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Bejelentkezés" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="Elfelejtettem a jelszavam" xml:space="preserve">
+    <value>Elfelejtettem a jelszavam</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Email-es megerősítés újraküldése" xml:space="preserve">
+    <value>Email-es megerősítés újraküldése</value>
+  </data>
+  <data name="Emlékezz rám" xml:space="preserve">
+    <value>Emlékezz rám</value>
+  </data>
   <data name="Felhasználó adatai" xml:space="preserve">
     <value>Felhasználó adatai</value>
   </data>
@@ -132,6 +147,12 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   </data>
   <data name="Hogyan lehet megrendelni_L" xml:space="preserve">
     <value>Hogyan lehet megrendelni</value>
+  </data>
+  <data name="Jelszó" xml:space="preserve">
+    <value>Jelszó</value>
+  </data>
+  <data name="Jelszó megerősítés" xml:space="preserve">
+    <value>Jelszó megerősítés</value>
   </data>
   <data name="Járműveim" xml:space="preserve">
     <value>Járműveim</value>
@@ -163,6 +184,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Motor" xml:space="preserve">
     <value>Motor</value>
+  </data>
+  <data name="Regisztráció" xml:space="preserve">
+    <value>Regisztráció</value>
   </data>
   <data name="Röviden a cégünkről" xml:space="preserve">
     <value>Cégünk egy új és kényelmesebb módját kínálja szeretett járművének tisztán tartására és megőrzésére az utókornak.</value>

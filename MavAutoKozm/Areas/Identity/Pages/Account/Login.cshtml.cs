@@ -66,7 +66,7 @@ namespace MavAutoKozm.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name ="Email cím")]
+            [Display(Name = nameof(Resources.Resource.Email), ResourceType = typeof(Resources.Resource))]
             public string Email { get; set; }
 
             /// <summary>
@@ -75,14 +75,14 @@ namespace MavAutoKozm.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [DataType(DataType.Password)]
-            [Display(Name = "Jelszó")]
+            [Display(Name = nameof(Resources.Resource.Jelszó), ResourceType = typeof(Resources.Resource))]
             public string Password { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Display(Name = "Emlékezz rám")]
+            [Display(Name = nameof(Resources.Resource.Emlékezz_rám), ResourceType = typeof(Resources.Resource))]
             public bool RememberMe { get; set; }
         }
 

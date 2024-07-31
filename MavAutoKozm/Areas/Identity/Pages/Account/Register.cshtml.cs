@@ -18,6 +18,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Localization;
+using System.Reflection;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MavAutoKozm.Areas.Identity.Pages.Account
 {
@@ -76,7 +80,7 @@ namespace MavAutoKozm.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = nameof(Resources.Resource.Email), ResourceType = typeof(Resources.Resource))]
             public string Email { get; set; }
 
             /// <summary>
@@ -86,7 +90,7 @@ namespace MavAutoKozm.Areas.Identity.Pages.Account
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Jelszó")]
+            [Display(Name = nameof(Resources.Resource.Jelszó), ResourceType = typeof(Resources.Resource))]
             public string Password { get; set; }
 
             /// <summary>
@@ -94,7 +98,7 @@ namespace MavAutoKozm.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Jelszó megerősítés")]
+            [Display(Name = nameof(Resources.Resource.Jelszó_megerősítés), ResourceType = typeof(Resources.Resource))]
             [Compare("Password", ErrorMessage = "A jelszavak nem egyeznek.")]
             public string ConfirmPassword { get; set; }
         }
