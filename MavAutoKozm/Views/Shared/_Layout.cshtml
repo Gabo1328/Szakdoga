@@ -23,34 +23,34 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Főoldal</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@MavAutoKozm.Resources.Resource.Főoldal</a>
                         </li>                                                
                          
                         @if (User.IsInRole("Admin") || User.IsInRole("Alkalmazott"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Megrendelesek">Megrendelések</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Megrendelesek">@MavAutoKozm.Resources.Resource.Megrendelések</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Felhasználók</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">@MavAutoKozm.Resources.Resource.Felhasználók</a>
                             </li>
                             <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járművek</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">@MavAutoKozm.Resources.Resource.Járművek</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CategorySelect">Megrendelés indítása</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CategorySelect">@MavAutoKozm.Resources.Resource.Megrendelés_Indítása</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Megrendelesek">Megrendeléseim</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Megrendelesek">@MavAutoKozm.Resources.Resource.Megrendeléseim</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Felhasználó adatai</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">@MavAutoKozm.Resources.Resource.Felhasználó_adatai</a>
                             </li>
                             <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">@MavAutoKozm.Resources.Resource.Járműveim</a>
                             </li>
                         }
                        

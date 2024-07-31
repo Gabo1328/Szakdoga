@@ -117,12 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Felhasználó adatai" xml:space="preserve">
+    <value>Felhasználó adatai</value>
+  </data>
+  <data name="Felhasználók" xml:space="preserve">
+    <value>Felhasználók</value>
+  </data>
+  <data name="Főoldal" xml:space="preserve">
+    <value>Főoldal</value>
+  </data>
   <data name="Hogyan lehet megrendelni" xml:space="preserve">
     <value>
 A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek megfelelő kategóriát, majd az igények felmérését követően el is végezzük azokat járművén.</value>
   </data>
   <data name="Hogyan lehet megrendelni_L" xml:space="preserve">
     <value>Hogyan lehet megrendelni</value>
+  </data>
+  <data name="Járműveim" xml:space="preserve">
+    <value>Járműveim</value>
+  </data>
+  <data name="Járművek" xml:space="preserve">
+    <value>Járművek</value>
   </data>
   <data name="Kamion" xml:space="preserve">
     <value>Kamion</value>
@@ -132,6 +147,12 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Megrendelés Indítása</value>
+  </data>
+  <data name="Megrendeléseim" xml:space="preserve">
+    <value>Megrendeléseim</value>
+  </data>
+  <data name="Megrendelések" xml:space="preserve">
+    <value>Megrendelések</value>
   </data>
   <data name="Mikor lehet átvenni" xml:space="preserve">
     <value>

@@ -61,6 +61,33 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Felhasználó adatai.
+        /// </summary>
+        public static string Felhasználó_adatai {
+            get {
+                return ResourceManager.GetString("Felhasználó adatai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Felhasználók.
+        /// </summary>
+        public static string Felhasználók {
+            get {
+                return ResourceManager.GetString("Felhasználók", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Főoldal.
+        /// </summary>
+        public static string Főoldal {
+            get {
+                return ResourceManager.GetString("Főoldal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 
         ///A &quot;Megrendelés indítása&quot; gombra kattintva már ki is választhatja az önnek megfelelő kategóriát, majd az igények felmérését követően el is végezzük azokat járművén..
         /// </summary>
@@ -76,6 +103,24 @@ namespace MavAutoKozm.Resources {
         public static string Hogyan_lehet_megrendelni_L {
             get {
                 return ResourceManager.GetString("Hogyan lehet megrendelni_L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Járműveim.
+        /// </summary>
+        public static string Járműveim {
+            get {
+                return ResourceManager.GetString("Járműveim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Járművek.
+        /// </summary>
+        public static string Járművek {
+            get {
+                return ResourceManager.GetString("Járművek", resourceCulture);
             }
         }
         
@@ -103,6 +148,24 @@ namespace MavAutoKozm.Resources {
         public static string Megrendelés_Indítása {
             get {
                 return ResourceManager.GetString("Megrendelés Indítása", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Megrendeléseim.
+        /// </summary>
+        public static string Megrendeléseim {
+            get {
+                return ResourceManager.GetString("Megrendeléseim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Megrendelések.
+        /// </summary>
+        public static string Megrendelések {
+            get {
+                return ResourceManager.GetString("Megrendelések", resourceCulture);
             }
         }
         

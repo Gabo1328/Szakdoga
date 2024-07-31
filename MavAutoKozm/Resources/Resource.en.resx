@@ -117,12 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Felhasználó adatai" xml:space="preserve">
+    <value>User Data</value>
+  </data>
+  <data name="Felhasználók" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Főoldal" xml:space="preserve">
+    <value>Main Page</value>
+  </data>
   <data name="Hogyan lehet megrendelni" xml:space="preserve">
     <value>
 By clicking on the "Start order" button, you can choose the category that suits you, and after assessing your needs, we will carry them out on your vehicle.</value>
   </data>
   <data name="Hogyan lehet megrendelni_L" xml:space="preserve">
     <value>How to order</value>
+  </data>
+  <data name="Járműveim" xml:space="preserve">
+    <value>My Vehicles</value>
+  </data>
+  <data name="Járművek" xml:space="preserve">
+    <value>Vehicles</value>
   </data>
   <data name="Kamion" xml:space="preserve">
     <value>Truck</value>
@@ -132,6 +147,12 @@ By clicking on the "Start order" button, you can choose the category that suits 
   </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Start order</value>
+  </data>
+  <data name="Megrendeléseim" xml:space="preserve">
+    <value>My Orders</value>
+  </data>
+  <data name="Megrendelések" xml:space="preserve">
+    <value>Orders</value>
   </data>
   <data name="Mikor lehet átvenni" xml:space="preserve">
     <value>
