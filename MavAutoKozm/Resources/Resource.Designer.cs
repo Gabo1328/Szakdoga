@@ -80,6 +80,24 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kamion.
+        /// </summary>
+        public static string Kamion {
+            get {
+                return ResourceManager.GetString("Kamion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kategória.
+        /// </summary>
+        public static string Kategória {
+            get {
+                return ResourceManager.GetString("Kategória", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Megrendelés Indítása.
         /// </summary>
         public static string Megrendelés_Indítása {
@@ -108,6 +126,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Motor.
+        /// </summary>
+        public static string Motor {
+            get {
+                return ResourceManager.GetString("Motor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cégünk egy új és kényelmesebb módját kínálja szeretett járművének tisztán tartására és megőrzésére az utókornak..
         /// </summary>
         public static string Röviden_a_cégünkről {
@@ -122,6 +149,24 @@ namespace MavAutoKozm.Resources {
         public static string Röviden_a_cégünkről_L {
             get {
                 return ResourceManager.GetString("Röviden a cégünkről_L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Személyautó.
+        /// </summary>
+        public static string Személyautó {
+            get {
+                return ResourceManager.GetString("Személyautó", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teherautó.
+        /// </summary>
+        public static string Teherautó {
+            get {
+                return ResourceManager.GetString("Teherautó", resourceCulture);
             }
         }
         

@@ -124,6 +124,12 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   <data name="Hogyan lehet megrendelni_L" xml:space="preserve">
     <value>Hogyan lehet megrendelni</value>
   </data>
+  <data name="Kamion" xml:space="preserve">
+    <value>Kamion</value>
+  </data>
+  <data name="Kategória" xml:space="preserve">
+    <value>Kategória</value>
+  </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Megrendelés Indítása</value>
   </data>
@@ -134,11 +140,20 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Mikor lehet átvenni_L" xml:space="preserve">
     <value>Mikor lehet átvenni</value>
   </data>
+  <data name="Motor" xml:space="preserve">
+    <value>Motor</value>
+  </data>
   <data name="Röviden a cégünkről" xml:space="preserve">
     <value>Cégünk egy új és kényelmesebb módját kínálja szeretett járművének tisztán tartására és megőrzésére az utókornak.</value>
   </data>
   <data name="Röviden a cégünkről_L" xml:space="preserve">
     <value>Röviden a cégünkről</value>
+  </data>
+  <data name="Személyautó" xml:space="preserve">
+    <value>Személyautó</value>
+  </data>
+  <data name="Teherautó" xml:space="preserve">
+    <value>Teherautó</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Üdvözöljük</value>

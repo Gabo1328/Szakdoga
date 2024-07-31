@@ -124,6 +124,12 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Hogyan lehet megrendelni_L" xml:space="preserve">
     <value>How to order</value>
   </data>
+  <data name="Kamion" xml:space="preserve">
+    <value>Truck</value>
+  </data>
+  <data name="Kategória" xml:space="preserve">
+    <value>Category</value>
+  </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Start order</value>
   </data>
@@ -134,12 +140,21 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   <data name="Mikor lehet átvenni_L" xml:space="preserve">
     <value>When can you pick it up</value>
   </data>
+  <data name="Motor" xml:space="preserve">
+    <value>Bike</value>
+  </data>
   <data name="Röviden a cégünkről" xml:space="preserve">
     <value>
 Our company offers a new and more convenient way to keep your beloved vehicle clean and preserve it for posterity.</value>
   </data>
   <data name="Röviden a cégünkről_L" xml:space="preserve">
     <value>Briefly about our company</value>
+  </data>
+  <data name="Személyautó" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="Teherautó" xml:space="preserve">
+    <value>Van</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Welcome</value>

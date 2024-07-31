@@ -67,7 +67,14 @@
                     <ul class="navbar-nav text-end">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Magyar
+                                @if (Thread.CurrentThread.CurrentCulture.ToString() == "en")
+                                {
+                                    <span>English</span>
+
+                                }else
+                                {
+                                    <span>Magyar</span>    
+                                }
                             </a>
 
                             <div class="dropdown-menu">
