@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Alap" xml:space="preserve">
+    <value>Alap</value>
+  </data>
   <data name="Bejelentkezés" xml:space="preserve">
     <value>Bejelentkezés</value>
+  </data>
+  <data name="Belső tisztítás" xml:space="preserve">
+    <value>Belső tisztítás</value>
   </data>
   <data name="Elfelejtettem a jelszavam" xml:space="preserve">
     <value>Elfelejtettem a jelszavam</value>
@@ -148,6 +154,9 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   <data name="Hogyan lehet megrendelni_L" xml:space="preserve">
     <value>Hogyan lehet megrendelni</value>
   </data>
+  <data name="Igények" xml:space="preserve">
+    <value>Igények</value>
+  </data>
   <data name="Jelszó" xml:space="preserve">
     <value>Jelszó</value>
   </data>
@@ -166,6 +175,18 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   <data name="Kategória" xml:space="preserve">
     <value>Kategória</value>
   </data>
+  <data name="Kavics védő fólia" xml:space="preserve">
+    <value>Kavics védő fólia</value>
+  </data>
+  <data name="Kerámia bevonat" xml:space="preserve">
+    <value>Kerámia bevonat</value>
+  </data>
+  <data name="Külső tisztítás" xml:space="preserve">
+    <value>Külső tisztítás</value>
+  </data>
+  <data name="Legjobb választás" xml:space="preserve">
+    <value>Legjobb választás</value>
+  </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Megrendelés Indítása</value>
   </data>
@@ -175,6 +196,9 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   <data name="Megrendelések" xml:space="preserve">
     <value>Megrendelések</value>
   </data>
+  <data name="Melyik járművét választja ki?" xml:space="preserve">
+    <value>Melyik járművét választja ki?</value>
+  </data>
   <data name="Mikor lehet átvenni" xml:space="preserve">
     <value>
 Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról is melyeket telefonon egyezetünk a folyamatok befejeztével.</value>
@@ -182,8 +206,17 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Mikor lehet átvenni_L" xml:space="preserve">
     <value>Mikor lehet átvenni</value>
   </data>
+  <data name="Minőségi szint" xml:space="preserve">
+    <value>Minőségi szint</value>
+  </data>
   <data name="Motor" xml:space="preserve">
     <value>Motor</value>
+  </data>
+  <data name="Polírozás" xml:space="preserve">
+    <value>Polírozás</value>
+  </data>
+  <data name="Prémium" xml:space="preserve">
+    <value>Prémium</value>
   </data>
   <data name="Regisztráció" xml:space="preserve">
     <value>Regisztráció</value>
@@ -199,6 +232,12 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Teherautó" xml:space="preserve">
     <value>Teherautó</value>
+  </data>
+  <data name="Tovább" xml:space="preserve">
+    <value>Tovább</value>
+  </data>
+  <data name="Waxolás" xml:space="preserve">
+    <value>Waxolás</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Üdvözöljük</value>

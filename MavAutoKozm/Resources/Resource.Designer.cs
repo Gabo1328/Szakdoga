@@ -61,11 +61,29 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alap.
+        /// </summary>
+        public static string Alap {
+            get {
+                return ResourceManager.GetString("Alap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bejelentkezés.
         /// </summary>
         public static string Bejelentkezés {
             get {
                 return ResourceManager.GetString("Bejelentkezés", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Belső tisztítás.
+        /// </summary>
+        public static string Belső_tisztítás {
+            get {
+                return ResourceManager.GetString("Belső tisztítás", resourceCulture);
             }
         }
         
@@ -152,6 +170,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Igények.
+        /// </summary>
+        public static string Igények {
+            get {
+                return ResourceManager.GetString("Igények", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Járműveim.
         /// </summary>
         public static string Járműveim {
@@ -206,6 +233,42 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kavics védő fólia.
+        /// </summary>
+        public static string Kavics_védő_fólia {
+            get {
+                return ResourceManager.GetString("Kavics védő fólia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kerámia bevonat.
+        /// </summary>
+        public static string Kerámia_bevonat {
+            get {
+                return ResourceManager.GetString("Kerámia bevonat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Külső tisztítás.
+        /// </summary>
+        public static string Külső_tisztítás {
+            get {
+                return ResourceManager.GetString("Külső tisztítás", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legjobb választás.
+        /// </summary>
+        public static string Legjobb_választás {
+            get {
+                return ResourceManager.GetString("Legjobb választás", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Megrendelés Indítása.
         /// </summary>
         public static string Megrendelés_Indítása {
@@ -233,6 +296,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Melyik járművét választja ki?.
+        /// </summary>
+        public static string Melyik_járművét_választja_ki_ {
+            get {
+                return ResourceManager.GetString("Melyik járművét választja ki?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 
         ///Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról is melyeket telefonon egyezetünk a folyamatok befejeztével..
         /// </summary>
@@ -252,11 +324,38 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Minőségi szint.
+        /// </summary>
+        public static string Minőségi_szint {
+            get {
+                return ResourceManager.GetString("Minőségi szint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Motor.
         /// </summary>
         public static string Motor {
             get {
                 return ResourceManager.GetString("Motor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polírozás.
+        /// </summary>
+        public static string Polírozás {
+            get {
+                return ResourceManager.GetString("Polírozás", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prémium.
+        /// </summary>
+        public static string Prémium {
+            get {
+                return ResourceManager.GetString("Prémium", resourceCulture);
             }
         }
         
@@ -306,11 +405,29 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tovább.
+        /// </summary>
+        public static string Tovább {
+            get {
+                return ResourceManager.GetString("Tovább", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Üdvözöljük.
         /// </summary>
         public static string Üdvözöljük {
             get {
                 return ResourceManager.GetString("Üdvözöljük", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waxolás.
+        /// </summary>
+        public static string Waxolás {
+            get {
+                return ResourceManager.GetString("Waxolás", resourceCulture);
             }
         }
     }

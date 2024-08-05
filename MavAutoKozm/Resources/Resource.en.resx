@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Alap" xml:space="preserve">
+    <value>Basis</value>
+  </data>
   <data name="Bejelentkezés" xml:space="preserve">
     <value>Sign In</value>
+  </data>
+  <data name="Belső tisztítás" xml:space="preserve">
+    <value>Internal cleaning</value>
   </data>
   <data name="Elfelejtettem a jelszavam" xml:space="preserve">
     <value>Forgot my password</value>
@@ -148,6 +154,9 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Hogyan lehet megrendelni_L" xml:space="preserve">
     <value>How to order</value>
   </data>
+  <data name="Igények" xml:space="preserve">
+    <value>Needs</value>
+  </data>
   <data name="Jelszó" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -166,6 +175,18 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Kategória" xml:space="preserve">
     <value>Category</value>
   </data>
+  <data name="Kavics védő fólia" xml:space="preserve">
+    <value>Paint Protection Film</value>
+  </data>
+  <data name="Kerámia bevonat" xml:space="preserve">
+    <value>Ceramic coating</value>
+  </data>
+  <data name="Külső tisztítás" xml:space="preserve">
+    <value>External cleaning</value>
+  </data>
+  <data name="Legjobb választás" xml:space="preserve">
+    <value>Best choice</value>
+  </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Start order</value>
   </data>
@@ -175,6 +196,9 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Megrendelések" xml:space="preserve">
     <value>Orders</value>
   </data>
+  <data name="Melyik járművét választja ki?" xml:space="preserve">
+    <value>Which vehicle do you choose?</value>
+  </data>
   <data name="Mikor lehet átvenni" xml:space="preserve">
     <value>
 Our company takes care of both the delivery and the delivery to the customer, which we agree on the phone after the processes are completed.</value>
@@ -182,8 +206,17 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   <data name="Mikor lehet átvenni_L" xml:space="preserve">
     <value>When can you pick it up</value>
   </data>
+  <data name="Minőségi szint" xml:space="preserve">
+    <value>Quality level</value>
+  </data>
   <data name="Motor" xml:space="preserve">
     <value>Bike</value>
+  </data>
+  <data name="Polírozás" xml:space="preserve">
+    <value>Polishing</value>
+  </data>
+  <data name="Prémium" xml:space="preserve">
+    <value>Premium</value>
   </data>
   <data name="Regisztráció" xml:space="preserve">
     <value>Sign Up</value>
@@ -200,6 +233,12 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   </data>
   <data name="Teherautó" xml:space="preserve">
     <value>Van</value>
+  </data>
+  <data name="Tovább" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Waxolás" xml:space="preserve">
+    <value>Waxing</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Welcome</value>

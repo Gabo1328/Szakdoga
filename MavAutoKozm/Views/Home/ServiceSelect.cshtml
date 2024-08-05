@@ -4,77 +4,77 @@
     ViewData["Title"] = "Igények";
 }
 <img src="~/css/image/3cf626720ae64fb5a5b5d9eab9e8c185.png" alt="LOGO" style="float:right;width:90px;height:90px;" />
-<h1>Igények</h1>
+<h1>@MavAutoKozm.Resources.Resource.Igények</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="ServiceSelect">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div style="display:flex; flex-wrap:nowrap">
-                <label asp-for="Category" class="control-label"></label>
+                <label asp-for="Category" class="control-label">@MavAutoKozm.Resources.Resource.Kategória</label>
                 <div style="width:10px">:</div>
                 <input asp-for="Category" class="form-control" hidden readonly="true" />
                 @if (Model.Category == 0)
                 {
-                    <div>Személyautó</div>
+                    <div>@MavAutoKozm.Resources.Resource.Személyautó</div>
                 }
                 else if (Model.Category == 1)
                 {
-                    <div>Teherautó</div>
+                    <div>@MavAutoKozm.Resources.Resource.Teherautó</div>
                 }
                 else if (Model.Category == 2)
                 {
-                    <div>Kamion</div>
+                    <div>@MavAutoKozm.Resources.Resource.Kamion</div>
                 }
                 else
                 {
-                    <div>Motor</div>
+                    <div>@MavAutoKozm.Resources.Resource.Motor</div>
                 }
             </div>
             <p></p>
             <div class="form-group">
-                <label asp-for="Quality" class="control-label"></label>:
+                <label asp-for="Quality" class="control-label">@MavAutoKozm.Resources.Resource.Minőségi_szint</label>:
                 <!-- <input asp-for="Quality" class="form-control" /> -->
                 <span asp-validation-for="Quality" class="text-danger"></span>
                 <select asp-for="Quality">
-                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Default)">Alap</option>
-                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Bestbuy)">Legjobb választás</option>
-                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Premium)">Prémium</option>
+                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Default)">@MavAutoKozm.Resources.Resource.Alap</option>
+                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Bestbuy)">@MavAutoKozm.Resources.Resource.Legjobb_választás</option>
+                    <option value="@Convert.ToInt32(NeedsEnums.QualityType.Premium)">@MavAutoKozm.Resources.Resource.Prémium</option>
                 </select>
             </div>
             <p></p>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Outer" /> @Html.DisplayNameFor(model => model.Outer)
+                    <input class="form-check-input" asp-for="Outer" /> @MavAutoKozm.Resources.Resource.Külső_tisztítás
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Inner" /> @Html.DisplayNameFor(model => model.Inner)
+                    <input class="form-check-input" asp-for="Inner" /> @MavAutoKozm.Resources.Resource.Belső_tisztítás
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Polish" /> @Html.DisplayNameFor(model => model.Polish)
+                    <input class="form-check-input" asp-for="Polish" /> @MavAutoKozm.Resources.Resource.Polírozás
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Wax" /> @Html.DisplayNameFor(model => model.Wax)
+                    <input class="form-check-input" asp-for="Wax" /> @MavAutoKozm.Resources.Resource.Waxolás
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Ceramic" /> @Html.DisplayNameFor(model => model.Ceramic)
+                    <input class="form-check-input" asp-for="Ceramic" /> @MavAutoKozm.Resources.Resource.Kerámia_bevonat
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Ppf" /> @Html.DisplayNameFor(model => model.Ppf)
+                    <input class="form-check-input" asp-for="Ppf" /> @MavAutoKozm.Resources.Resource.Kavics_védő_fólia
                 </label>
             </div>
             <p></p>                           
-            <label asp-for="SelectedVehicleId" class="control-label"></label>
+            <label asp-for="SelectedVehicleId" class="control-label">@MavAutoKozm.Resources.Resource.Melyik_járművét_választja_ki_</label>
             <select asp-for="SelectedVehicleId">
                 @foreach (var item in Model.Vehicles)
                 {                                   
@@ -83,7 +83,7 @@
             </select>
             <p></p>
             <div class="form-group">
-                <input type="submit" value="Tovább" class="btn btn-primary" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
+                <input type="submit" value="@MavAutoKozm.Resources.Resource.Tovább" class="btn btn-primary" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
                     text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 130px; font-size: 14px;
                     margin-bottom: 1%"/>
             </div>
