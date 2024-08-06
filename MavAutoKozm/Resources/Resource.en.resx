@@ -178,14 +178,23 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Kavics védő fólia" xml:space="preserve">
     <value>Paint Protection Film</value>
   </data>
+  <data name="Keresztnév" xml:space="preserve">
+    <value>First Name</value>
+  </data>
   <data name="Kerámia bevonat" xml:space="preserve">
     <value>Ceramic coating</value>
+  </data>
+  <data name="Köszönjük a megrendelést" xml:space="preserve">
+    <value>Thanks for your order</value>
   </data>
   <data name="Külső tisztítás" xml:space="preserve">
     <value>External cleaning</value>
   </data>
   <data name="Legjobb választás" xml:space="preserve">
     <value>Best choice</value>
+  </data>
+  <data name="Megrendelés" xml:space="preserve">
+    <value>Order</value>
   </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Start order</value>
@@ -195,6 +204,12 @@ By clicking on the "Start order" button, you can choose the category that suits 
   </data>
   <data name="Megrendelések" xml:space="preserve">
     <value>Orders</value>
+  </data>
+  <data name="Megrendelési azonosítója" xml:space="preserve">
+    <value>Your order ID</value>
+  </data>
+  <data name="Megrendelési idő" xml:space="preserve">
+    <value>Order Time</value>
   </data>
   <data name="Melyik járművét választja ki?" xml:space="preserve">
     <value>Which vehicle do you choose?</value>
@@ -209,8 +224,17 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   <data name="Minőségi szint" xml:space="preserve">
     <value>Quality level</value>
   </data>
+  <data name="Modell" xml:space="preserve">
+    <value>Model</value>
+  </data>
   <data name="Motor" xml:space="preserve">
     <value>Bike</value>
+  </data>
+  <data name="Márka" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="Módosítás" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="Polírozás" xml:space="preserve">
     <value>Polishing</value>
@@ -220,6 +244,9 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   </data>
   <data name="Regisztráció" xml:space="preserve">
     <value>Sign Up</value>
+  </data>
+  <data name="Rendszám" xml:space="preserve">
+    <value>License Plate</value>
   </data>
   <data name="Röviden a cégünkről" xml:space="preserve">
     <value>
@@ -231,14 +258,32 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   <data name="Személyautó" xml:space="preserve">
     <value>Car</value>
   </data>
+  <data name="Szín" xml:space="preserve">
+    <value>Color</value>
+  </data>
   <data name="Teherautó" xml:space="preserve">
     <value>Van</value>
+  </data>
+  <data name="Telefonszám" xml:space="preserve">
+    <value>Phone Number</value>
   </data>
   <data name="Tovább" xml:space="preserve">
     <value>Next</value>
   </data>
+  <data name="Vezetéknév" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Végrehajtási idő" xml:space="preserve">
+    <value>Execution Time</value>
+  </data>
   <data name="Waxolás" xml:space="preserve">
     <value>Waxing</value>
+  </data>
+  <data name="Ár" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Összegzés" xml:space="preserve">
+    <value>Summary</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Welcome</value>

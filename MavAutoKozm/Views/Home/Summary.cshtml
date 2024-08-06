@@ -4,7 +4,7 @@
     ViewData["Title"] = "Összegzés";
 }
 <img src="~/css/image/3cf626720ae64fb5a5b5d9eab9e8c185.png" alt="LOGO" style="float:right;width:90px;height:90px;" />
-<h1>Összegzés</h1>
+<h1>@MavAutoKozm.Resources.Resource.Összegzés</h1>
 
 <div>
     <hr />
@@ -16,111 +16,132 @@
             @Html.DisplayFor(model => model.ActualAppUser.ID)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ActualAppUser.LastName)
+            @MavAutoKozm.Resources.Resource.Vezetéknév
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ActualAppUser.LastName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ActualAppUser.FirstMidName)
+            @MavAutoKozm.Resources.Resource.Keresztnév
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ActualAppUser.FirstMidName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ActualAppUser.Email)
+            @MavAutoKozm.Resources.Resource.Email
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ActualAppUser.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ActualAppUser.PhoneNumber)
+            @MavAutoKozm.Resources.Resource.Telefonszám
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ActualAppUser.PhoneNumber)
         </dd>
         <hr>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedVehicle.Brand)
+                @MavAutoKozm.Resources.Resource.Márka
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedVehicle.Brand)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedVehicle.Model)
+                @MavAutoKozm.Resources.Resource.Modell
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedVehicle.Model)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedVehicle.Color)
+                @MavAutoKozm.Resources.Resource.Szín
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedVehicle.Color)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedVehicle.NumberPlate)
+                @MavAutoKozm.Resources.Resource.Rendszám
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedVehicle.NumberPlate)
         </dd>
         <hr>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Outer)
+                    @MavAutoKozm.Resources.Resource.Külső_tisztítás
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedServices.Outer)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Inner)
+                    @MavAutoKozm.Resources.Resource.Belső_tisztítás
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedServices.Inner)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Polish)
+                    @MavAutoKozm.Resources.Resource.Polírozás
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedServices.Polish)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Wax)
+                    @MavAutoKozm.Resources.Resource.Waxolás
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedServices.Wax)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Ceramic)
+                    @MavAutoKozm.Resources.Resource.Kerámia_bevonat
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedServices.Ceramic)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Ppf)
+                    @MavAutoKozm.Resources.Resource.Kavics_védő_fólia
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SelectedServices.Ppf)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Category)
+                    @MavAutoKozm.Resources.Resource.Kategória
         </dt>
         <dd class="col-sm-10">
-            @if (Model.SelectedServices.Category == 0) {<div>Személyautó</div> }
-            else if( Model.SelectedServices.Category == 1) {<div>Teherautó</div> }
-            else if( Model.SelectedServices.Category == 2) {<div>Kamion</div> }
-            else {<div>Motor</div> }
+                    @if (Model.SelectedServices.Category == 0)
+                    {
+                        <div>@MavAutoKozm.Resources.Resource.Személyautó</div>
+                    }
+                    else if (Model.SelectedServices.Category == 1)
+                    {
+                        <div>@MavAutoKozm.Resources.Resource.Teherautó</div>
+                    }
+                    else if (Model.SelectedServices.Category == 2)
+                    {
+                        <div>@MavAutoKozm.Resources.Resource.Kamion</div>
+                    }
+                    else
+                    {
+                        <div>@MavAutoKozm.Resources.Resource.Motor</div>
+                    }
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SelectedServices.Quality)
+                    @MavAutoKozm.Resources.Resource.Minőségi_szint
         </dt>
         <dd class="col-sm-10">
-            @if (Model.SelectedServices.Quality == 0) {<div>Alap</div> }
-            else if( Model.SelectedServices.Quality == 1) {<div>Legjobb választás</div> }
-            else {<div>Prémium</div> }
+                    @if (Model.SelectedServices.Quality == 0)
+                    {
+                        <div>@MavAutoKozm.Resources.Resource.Alap</div>
+                    }
+                    else if (Model.SelectedServices.Quality == 1)
+                    {
+                        <div>@MavAutoKozm.Resources.Resource.Legjobb_választás</div>
+                    }
+                    else
+                    {
+                        <div>@MavAutoKozm.Resources.Resource.Prémium</div>
+                    }
         </dd>
         <hr>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
+                        @MavAutoKozm.Resources.Resource.Ár
         </dt>
         <dd class="col-sm-10">
             @{
@@ -128,13 +149,13 @@
             }
             <div>@Price</div>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderTime)
+                            @MavAutoKozm.Resources.Resource.Megrendelési_idő
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OrderTime)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CompletedTime)
+                            @MavAutoKozm.Resources.Resource.Végrehajtási_idő
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CompletedTime)
@@ -144,10 +165,10 @@
 <table class="row" aria-hidden="true">
     <tr>
         <td>
-            <a class="Gomb nav-link text-dark" asp-action="ServiceSelect">Módosítás</a>
+            <a class="Gomb nav-link text-dark" asp-action="ServiceSelect">@MavAutoKozm.Resources.Resource.Módosítás</a>
         </td>
         <td>
-            <a class="Gomb nav-link text-dark" asp-action="SaveToDatabase">Megrendelés</a>
+            <a class="Gomb nav-link text-dark" asp-action="SaveToDatabase">@MavAutoKozm.Resources.Resource.Megrendelés</a>
         </td>
     </tr>   
 </table>

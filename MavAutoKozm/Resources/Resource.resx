@@ -178,14 +178,23 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   <data name="Kavics védő fólia" xml:space="preserve">
     <value>Kavics védő fólia</value>
   </data>
+  <data name="Keresztnév" xml:space="preserve">
+    <value>Keresztnév</value>
+  </data>
   <data name="Kerámia bevonat" xml:space="preserve">
     <value>Kerámia bevonat</value>
+  </data>
+  <data name="Köszönjük a megrendelést" xml:space="preserve">
+    <value>Köszönjük a megrendelést</value>
   </data>
   <data name="Külső tisztítás" xml:space="preserve">
     <value>Külső tisztítás</value>
   </data>
   <data name="Legjobb választás" xml:space="preserve">
     <value>Legjobb választás</value>
+  </data>
+  <data name="Megrendelés" xml:space="preserve">
+    <value>Megrendelés</value>
   </data>
   <data name="Megrendelés Indítása" xml:space="preserve">
     <value>Megrendelés Indítása</value>
@@ -195,6 +204,12 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   </data>
   <data name="Megrendelések" xml:space="preserve">
     <value>Megrendelések</value>
+  </data>
+  <data name="Megrendelési azonosítója" xml:space="preserve">
+    <value>Megrendelési azonosítója</value>
+  </data>
+  <data name="Megrendelési idő" xml:space="preserve">
+    <value>Megrendelési idő</value>
   </data>
   <data name="Melyik járművét választja ki?" xml:space="preserve">
     <value>Melyik járművét választja ki?</value>
@@ -209,8 +224,17 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Minőségi szint" xml:space="preserve">
     <value>Minőségi szint</value>
   </data>
+  <data name="Modell" xml:space="preserve">
+    <value>Modell</value>
+  </data>
   <data name="Motor" xml:space="preserve">
     <value>Motor</value>
+  </data>
+  <data name="Márka" xml:space="preserve">
+    <value>Márka</value>
+  </data>
+  <data name="Módosítás" xml:space="preserve">
+    <value>Módosítás</value>
   </data>
   <data name="Polírozás" xml:space="preserve">
     <value>Polírozás</value>
@@ -221,6 +245,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Regisztráció" xml:space="preserve">
     <value>Regisztráció</value>
   </data>
+  <data name="Rendszám" xml:space="preserve">
+    <value>Rendszám</value>
+  </data>
   <data name="Röviden a cégünkről" xml:space="preserve">
     <value>Cégünk egy új és kényelmesebb módját kínálja szeretett járművének tisztán tartására és megőrzésére az utókornak.</value>
   </data>
@@ -230,14 +257,32 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Személyautó" xml:space="preserve">
     <value>Személyautó</value>
   </data>
+  <data name="Szín" xml:space="preserve">
+    <value>Szín</value>
+  </data>
   <data name="Teherautó" xml:space="preserve">
     <value>Teherautó</value>
+  </data>
+  <data name="Telefonszám" xml:space="preserve">
+    <value>Telefonszám</value>
   </data>
   <data name="Tovább" xml:space="preserve">
     <value>Tovább</value>
   </data>
+  <data name="Vezetéknév" xml:space="preserve">
+    <value>Vezetéknév</value>
+  </data>
+  <data name="Végrehajtási idő" xml:space="preserve">
+    <value>Végrehajtási idő</value>
+  </data>
   <data name="Waxolás" xml:space="preserve">
     <value>Waxolás</value>
+  </data>
+  <data name="Ár" xml:space="preserve">
+    <value>Ár</value>
+  </data>
+  <data name="Összegzés" xml:space="preserve">
+    <value>Összegzés</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Üdvözöljük</value>
