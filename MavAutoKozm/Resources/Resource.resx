@@ -263,6 +263,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Személyautó" xml:space="preserve">
     <value>Személyautó</value>
   </data>
+  <data name="Szerepkörök" xml:space="preserve">
+    <value>Szerepkörök</value>
+  </data>
   <data name="Szerkesztés" xml:space="preserve">
     <value>Szerkesztés</value>
   </data>

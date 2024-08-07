@@ -264,6 +264,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   <data name="Személyautó" xml:space="preserve">
     <value>Car</value>
   </data>
+  <data name="Szerepkörök" xml:space="preserve">
+    <value>Roles</value>
+  </data>
   <data name="Szerkesztés" xml:space="preserve">
     <value>Edit</value>
   </data>

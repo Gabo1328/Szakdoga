@@ -513,6 +513,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Szerepkörök.
+        /// </summary>
+        public static string Szerepkörök {
+            get {
+                return ResourceManager.GetString("Szerepkörök", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Szerkesztés.
         /// </summary>
         public static string Szerkesztés {
