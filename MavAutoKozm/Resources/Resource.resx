@@ -214,6 +214,9 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   <data name="Melyik járművét választja ki?" xml:space="preserve">
     <value>Melyik járművét választja ki?</value>
   </data>
+  <data name="Mentés" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
   <data name="Mikor lehet átvenni" xml:space="preserve">
     <value>
 Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról is melyeket telefonon egyezetünk a folyamatok befejeztével.</value>
@@ -260,6 +263,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Személyautó" xml:space="preserve">
     <value>Személyautó</value>
   </data>
+  <data name="Szerkesztés" xml:space="preserve">
+    <value>Szerkesztés</value>
+  </data>
   <data name="Szín" xml:space="preserve">
     <value>Szín</value>
   </data>
@@ -277,6 +283,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Vezetéknév" xml:space="preserve">
     <value>Vezetéknév</value>
+  </data>
+  <data name="Vissza a listába" xml:space="preserve">
+    <value>Vissza a listába</value>
   </data>
   <data name="Végrehajtási idő" xml:space="preserve">
     <value>Végrehajtási idő</value>

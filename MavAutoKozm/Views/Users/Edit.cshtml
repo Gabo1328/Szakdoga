@@ -5,7 +5,7 @@
 }
 
 <img src="~/css/image/3cf626720ae64fb5a5b5d9eab9e8c185.png" alt="LOGO" style="float:right;width:90px;height:90px;" />
-<h1>Szerkesztés</h1>
+<h1>@MavAutoKozm.Resources.Resource.Szerkesztés</h1>
 
 
 <hr />
@@ -15,22 +15,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
+                <label asp-for="LastName" class="control-label">@MavAutoKozm.Resources.Resource.Keresztnév</label>
                 <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FirstMidName" class="control-label"></label>
+                <label asp-for="FirstMidName" class="control-label">@MavAutoKozm.Resources.Resource.Vezetéknév</label>
                 <input asp-for="FirstMidName" class="form-control" />
                 <span asp-validation-for="FirstMidName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">@MavAutoKozm.Resources.Resource.Email</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+                <label asp-for="PhoneNumber" class="control-label">@MavAutoKozm.Resources.Resource.Telefonszám </label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
@@ -47,13 +47,13 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <div>
-                                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járművek</a>
+                                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">@MavAutoKozm.Resources.Resource.Járművek</a>
                             </div>
                         }
                         else
                         {
                             <div>
-                                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">Járműveim</a>
+                                <a class="Gomb nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="Index">@MavAutoKozm.Resources.Resource.Járműveim</a>
                             </div>
                         }
                         
@@ -68,7 +68,7 @@
                     <td>
                         <p></p>
                         <div class="form-group">
-                            <input type="submit" value="Mentés" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
+                            <input type="submit" value="@MavAutoKozm.Resources.Resource.Mentés" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
                                 text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 130px; font-size: 14px; 
                                 margin-bottom: 1%"/>
                         </div>
@@ -80,7 +80,7 @@
 </div>
 <p></p>
 <div>
-    <a asp-action="Index">Vissza a listába</a>
+    <a asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
 </div>
 
 @section Scripts {

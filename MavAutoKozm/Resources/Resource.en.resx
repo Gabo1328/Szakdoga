@@ -214,6 +214,9 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Melyik járművét választja ki?" xml:space="preserve">
     <value>Which vehicle do you choose?</value>
   </data>
+  <data name="Mentés" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="Mikor lehet átvenni" xml:space="preserve">
     <value>
 Our company takes care of both the delivery and the delivery to the customer, which we agree on the phone after the processes are completed.</value>
@@ -261,6 +264,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   <data name="Személyautó" xml:space="preserve">
     <value>Car</value>
   </data>
+  <data name="Szerkesztés" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="Szín" xml:space="preserve">
     <value>Color</value>
   </data>
@@ -278,6 +284,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   </data>
   <data name="Vezetéknév" xml:space="preserve">
     <value>Last Name</value>
+  </data>
+  <data name="Vissza a listába" xml:space="preserve">
+    <value>Back to the list</value>
   </data>
   <data name="Végrehajtási idő" xml:space="preserve">
     <value>Execution Time</value>
