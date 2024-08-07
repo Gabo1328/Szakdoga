@@ -17,13 +17,13 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @MavAutoKozm.Resources.Resource.Ár
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @MavAutoKozm.Resources.Resource.Kategória
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OrderTime)
+                @MavAutoKozm.Resources.Resource.Megrendelési_idő
             </th>
             <th></th>
         </tr>
@@ -56,8 +56,8 @@
                 </td>
                 <td>
                     @*<a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |*@
-                    <a asp-action="DetailsOrder" asp-route-id="@item.Id">Részletek</a> |
-                    <a asp-action="DeleteOrder" asp-route-id="@item.Id">Törlés</a>
+                    <a asp-action="DetailsOrder" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Részletek</a> |
+                    <a asp-action="DeleteOrder" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Törlés</a>
                 </td>
             </tr>
         }

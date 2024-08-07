@@ -248,6 +248,9 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   <data name="Rendszám" xml:space="preserve">
     <value>License Plate</value>
   </data>
+  <data name="Részletek" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="Röviden a cégünkről" xml:space="preserve">
     <value>
 Our company offers a new and more convenient way to keep your beloved vehicle clean and preserve it for posterity.</value>
@@ -269,6 +272,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   </data>
   <data name="Tovább" xml:space="preserve">
     <value>Next</value>
+  </data>
+  <data name="Törlés" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="Vezetéknév" xml:space="preserve">
     <value>Last Name</value>

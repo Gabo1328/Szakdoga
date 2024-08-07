@@ -248,6 +248,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Rendszám" xml:space="preserve">
     <value>Rendszám</value>
   </data>
+  <data name="Részletek" xml:space="preserve">
+    <value>Részletek</value>
+  </data>
   <data name="Röviden a cégünkről" xml:space="preserve">
     <value>Cégünk egy új és kényelmesebb módját kínálja szeretett járművének tisztán tartására és megőrzésére az utókornak.</value>
   </data>
@@ -268,6 +271,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Tovább" xml:space="preserve">
     <value>Tovább</value>
+  </data>
+  <data name="Törlés" xml:space="preserve">
+    <value>Törlés</value>
   </data>
   <data name="Vezetéknév" xml:space="preserve">
     <value>Vezetéknév</value>

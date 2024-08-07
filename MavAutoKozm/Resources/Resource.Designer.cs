@@ -468,6 +468,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Részletek.
+        /// </summary>
+        public static string Részletek {
+            get {
+                return ResourceManager.GetString("Részletek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cégünk egy új és kényelmesebb módját kínálja szeretett járművének tisztán tartására és megőrzésére az utókornak..
         /// </summary>
         public static string Röviden_a_cégünkről {
@@ -518,6 +527,15 @@ namespace MavAutoKozm.Resources {
         public static string Telefonszám {
             get {
                 return ResourceManager.GetString("Telefonszám", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Törlés.
+        /// </summary>
+        public static string Törlés {
+            get {
+                return ResourceManager.GetString("Törlés", resourceCulture);
             }
         }
         
