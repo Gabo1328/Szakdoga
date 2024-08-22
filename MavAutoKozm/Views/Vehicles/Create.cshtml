@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Jármű hozzáadás</h1>
+<h1>@MavAutoKozm.Resources.Resource.Jármű_hozzáadás</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,33 +16,33 @@
                 <input asp-for="AppUserId" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Brand" class="control-label"></label>
+                <label asp-for="Brand" class="control-label">@MavAutoKozm.Resources.Resource.Márka</label>
                 <input asp-for="Brand" class="form-control" />
                 <span asp-validation-for="Brand" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Model" class="control-label"></label>
+                <label asp-for="Model" class="control-label">@MavAutoKozm.Resources.Resource.Modell</label>
                 <input asp-for="Model" class="form-control" />
                 <span asp-validation-for="Model" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
+                <label asp-for="Type" class="control-label">@MavAutoKozm.Resources.Resource.Típus</label>
                 <input asp-for="Type" class="form-control" />
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
+                <label asp-for="Color" class="control-label">@MavAutoKozm.Resources.Resource.Szín</label>
                 <input asp-for="Color" class="form-control" />
                 <span asp-validation-for="Color" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NumberPlate" class="control-label"></label>
+                <label asp-for="NumberPlate" class="control-label">@MavAutoKozm.Resources.Resource.Rendszám</label>
                 <input asp-for="NumberPlate" class="form-control" />
                 <span asp-validation-for="NumberPlate" class="text-danger"></span>
             </div>
             <p></p>
             <div class="form-group">
-                <input type="submit" value="Mentés" class="btn btn-primary" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
+                <input type="submit" value="@MavAutoKozm.Resources.Resource.Mentés" class="btn btn-primary" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
                     text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 130px; font-size: 14px;
                     margin-bottom: 1%" />
             </div>
@@ -51,7 +51,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Vissza a listába</a>
+    <a asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
 </div>
 
 @section Scripts {

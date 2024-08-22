@@ -4,26 +4,26 @@
     ViewData["Title"] = "Járműveim";
 }
 <img src="~/css/image/3cf626720ae64fb5a5b5d9eab9e8c185.png" alt="LOGO" style="float:right;width:90px;height:90px;" />
-<h1>Járműveim</h1>
+<h1>@MavAutoKozm.Resources.Resource.Járműveim</h1>
 
 
 <table class="table" aria-hidden="true">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Brand)
+                @MavAutoKozm.Resources.Resource.Márka
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Model)
+                @MavAutoKozm.Resources.Resource.Modell
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                @MavAutoKozm.Resources.Resource.Típus
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Color)
+                @MavAutoKozm.Resources.Resource.Szín
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NumberPlate)
+                @MavAutoKozm.Resources.Resource.Rendszám
             </th>
             <th></th>
         </tr>
@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.NumberPlate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Szerkesztés</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Részletek</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Törlés</a>
             </td>
         </tr>
 }
@@ -68,6 +68,7 @@
                 width:15%;
                 font-size: 14px;
                 margin-bottom:1%;"
-       asp-action="Create">Új hozzáadása
+       asp-action="Create">
+        @MavAutoKozm.Resources.Resource.Új_hozzáadása
    </a>
 </p>

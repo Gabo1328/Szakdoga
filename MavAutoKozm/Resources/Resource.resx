@@ -163,6 +163,9 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   <data name="Jelszó megerősítés" xml:space="preserve">
     <value>Jelszó megerősítés</value>
   </data>
+  <data name="Jármű hozzáadás" xml:space="preserve">
+    <value>Jármű hozzáadás</value>
+  </data>
   <data name="Járműveim" xml:space="preserve">
     <value>Járműveim</value>
   </data>
@@ -281,6 +284,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Tovább" xml:space="preserve">
     <value>Tovább</value>
   </data>
+  <data name="Típus" xml:space="preserve">
+    <value>Típus</value>
+  </data>
   <data name="Törlés" xml:space="preserve">
     <value>Törlés</value>
   </data>
@@ -301,6 +307,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Összegzés" xml:space="preserve">
     <value>Összegzés</value>
+  </data>
+  <data name="Új hozzáadása" xml:space="preserve">
+    <value>Új hozzáadása</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Üdvözöljük</value>

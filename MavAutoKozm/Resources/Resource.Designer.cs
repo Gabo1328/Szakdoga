@@ -188,6 +188,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jármű hozzáadás.
+        /// </summary>
+        public static string Jármű_hozzáadás {
+            get {
+                return ResourceManager.GetString("Jármű hozzáadás", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Járműveim.
         /// </summary>
         public static string Járműveim {
@@ -558,6 +567,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Típus.
+        /// </summary>
+        public static string Típus {
+            get {
+                return ResourceManager.GetString("Típus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Törlés.
         /// </summary>
         public static string Törlés {
@@ -581,6 +599,15 @@ namespace MavAutoKozm.Resources {
         public static string Üdvözöljük {
             get {
                 return ResourceManager.GetString("Üdvözöljük", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Új hozzáadása.
+        /// </summary>
+        public static string Új_hozzáadása {
+            get {
+                return ResourceManager.GetString("Új hozzáadása", resourceCulture);
             }
         }
         

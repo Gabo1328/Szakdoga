@@ -4,38 +4,38 @@
     ViewData["Title"] = "Részletek";
 }
 <img src="~/css/image/3cf626720ae64fb5a5b5d9eab9e8c185.png" alt="LOGO" style="float:right;width:90px;height:90px;" />
-<h1>Részletek</h1>
+<h1>@MavAutoKozm.Resources.Resource.Részletek</h1>
 
 <div>
     
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Brand)
+            @MavAutoKozm.Resources.Resource.Márka
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Brand)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Model)
+            @MavAutoKozm.Resources.Resource.Modell
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Model)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Type)
+            @MavAutoKozm.Resources.Resource.Típus
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Color)
+            @MavAutoKozm.Resources.Resource.Szín
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Color)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumberPlate)
+            @MavAutoKozm.Resources.Resource.Rendszám
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NumberPlate)
@@ -43,6 +43,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Szerkesztés</a> |
-    <a asp-action="Index">Vissza a listába</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">@MavAutoKozm.Resources.Resource.Szerkesztés</a> |
+    <a asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
 </div>

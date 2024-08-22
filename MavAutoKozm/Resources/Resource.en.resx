@@ -163,6 +163,9 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Jelszó megerősítés" xml:space="preserve">
     <value>Password confirmation</value>
   </data>
+  <data name="Jármű hozzáadás" xml:space="preserve">
+    <value>Add Vehicle</value>
+  </data>
   <data name="Járműveim" xml:space="preserve">
     <value>My Vehicles</value>
   </data>
@@ -282,6 +285,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   <data name="Tovább" xml:space="preserve">
     <value>Next</value>
   </data>
+  <data name="Típus" xml:space="preserve">
+    <value>Type</value>
+  </data>
   <data name="Törlés" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -302,6 +308,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   </data>
   <data name="Összegzés" xml:space="preserve">
     <value>Summary</value>
+  </data>
+  <data name="Új hozzáadása" xml:space="preserve">
+    <value>Add new</value>
   </data>
   <data name="Üdvözöljük" xml:space="preserve">
     <value>Welcome</value>
