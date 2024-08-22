@@ -27,3 +27,8 @@ a.Gomb:link, a.Gomb:visited {
     display:flex;
     justify-content: center;
 }
+.terkoz {
+    margin-left:300px;
+    margin-right:300px;
+
+}
