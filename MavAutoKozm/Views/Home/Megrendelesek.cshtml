@@ -4,7 +4,7 @@
     ViewData["Title"] = "Megrendelések";
 }
 <img src="~/css/image/3cf626720ae64fb5a5b5d9eab9e8c185.png" alt="LOGO" style="float:right;width:90px;height:90px;" />
-<h1>Megrendelések</h1>
+<h1>@MavAutoKozm.Resources.Resource.Megrendelések</h1>
 
 
 <table class="table" aria-hidden="true">
@@ -57,7 +57,7 @@
                 <td>
                     @*<a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |*@
                     <a asp-action="DetailsOrder" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Részletek</a> |
-                    <a asp-action="DeleteOrder" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Törlés</a>
+                    <a style="color: red" asp-action="DeleteOrder" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Törlés</a>
                 </td>
             </tr>
         }

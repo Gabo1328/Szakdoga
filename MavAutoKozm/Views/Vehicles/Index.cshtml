@@ -49,7 +49,7 @@
             <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Szerkesztés</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Részletek</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Törlés</a>
+                    <a style="color: red"asp-action="Delete" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Törlés</a>
             </td>
         </tr>
 }
