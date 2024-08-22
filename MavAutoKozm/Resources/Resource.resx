@@ -245,6 +245,63 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Polírozás" xml:space="preserve">
     <value>Polírozás</value>
   </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Adatvédelmi Irányelv Tájékoztató</value>
+  </data>
+  <data name="Privacy1" xml:space="preserve">
+    <value>Ez az Adatvédelmi Irányelv meghatározza a MÁV-SZK által alkalmazott adatvédelmi gyakorlatokat és elveket, amelyek az ügyfeleink, partnereink és alkalmazottjaink személyes adatainak kezelésére vonatkoznak. Az adatvédelem kiemelten fontos számunkra, és elkötelezettek vagyunk az Ön személyes adatainak védelme mellett.</value>
+  </data>
+  <data name="Privacy1L" xml:space="preserve">
+    <value>1. Bevezetés</value>
+  </data>
+  <data name="Privacy2" xml:space="preserve">
+    <value>Az általunk gyűjtött személyes adatokat kizárólag a jogszabályokkal összhangban és a vállalkozásunk tevékenységeinek támogatása céljából használjuk fel. Ezek az adatok lehetnek például név, cím, e-mail cím, telefonszám, és más azonosító információk.</value>
+  </data>
+  <data name="Privacy2L" xml:space="preserve">
+    <value>2. Személyes adatok gyűjtése és felhasználása</value>
+  </data>
+  <data name="Privacy3.1" xml:space="preserve">
+    <value>Az Ön adatvédelmi jogai fontosak számunkra. Kérjük, vegye figyelembe az alábbi jogokat:</value>
+  </data>
+  <data name="Privacy3.2" xml:space="preserve">
+    <value>Hozzáférés: Jogában áll kérni, hogy tájékoztassuk Önt az általunk kezelt személyes adatairól.</value>
+  </data>
+  <data name="Privacy3.3" xml:space="preserve">
+    <value>Helyesbítés: Amennyiben az általunk kezelt adatok hibásak vagy hiányosak, jogában áll kérni azok javítását.</value>
+  </data>
+  <data name="Privacy3.4" xml:space="preserve">
+    <value>Törlés: Bizonyos feltételek mellett jogában áll kérni az adatok törlését.</value>
+  </data>
+  <data name="Privacy3.5" xml:space="preserve">
+    <value>Korlátozás: Bizonyos esetekben jogában áll kérni az adatok kezelésének korlátozását.</value>
+  </data>
+  <data name="Privacy3.6" xml:space="preserve">
+    <value>Adathordozhatóság: Jogában áll kérni a személyes adatainak átadását vagy másolatának megkapását strukturált, általánosan használt és géppel olvasható formátumban.</value>
+  </data>
+  <data name="Privacy3.7" xml:space="preserve">
+    <value>Ellenvetés: Bizonyos esetekben jogában áll tiltakozni a személyes adatok kezelése ellen.</value>
+  </data>
+  <data name="Privacy3L" xml:space="preserve">
+    <value>3. Data protection rights</value>
+  </data>
+  <data name="Privacy4" xml:space="preserve">
+    <value>Az adatvédelmi szempontokat szigorúan vesszük, és megfelelő technikai és szervezési intézkedéseket alkalmazunk az adatok védelme érdekében. Az adatokhoz való illetéktelen hozzáférést, felhasználást, módosítást vagy más módon történő veszélyeztetést megelőzzük.</value>
+  </data>
+  <data name="Privacy4L" xml:space="preserve">
+    <value>4. Biztonság és védelem</value>
+  </data>
+  <data name="Privacy5" xml:space="preserve">
+    <value>Néha szükségünk lehet harmadik felekkel való adatmegosztásra, például üzleti partnerekkel vagy szolgáltatókkal. Minden ilyen esetben gondoskodunk arról, hogy a harmadik fél is megfeleljen az adatvédelmi elvárásoknak.</value>
+  </data>
+  <data name="Privacy5L" xml:space="preserve">
+    <value>5. Harmadik felek</value>
+  </data>
+  <data name="Privacy6" xml:space="preserve">
+    <value>Ha bármilyen kérdése vagy aggálya van az adatvédelemmel kapcsolatban, kérjük, lépjen kapcsolatba velünk az alábbi elérhetőségen:</value>
+  </data>
+  <data name="Privacy6L" xml:space="preserve">
+    <value>6. Kapcsolat</value>
+  </data>
   <data name="Prémium" xml:space="preserve">
     <value>Prémium</value>
   </data>
@@ -262,6 +319,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Röviden a cégünkről_L" xml:space="preserve">
     <value>Röviden a cégünkről</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
   <data name="Személyautó" xml:space="preserve">
     <value>Személyautó</value>

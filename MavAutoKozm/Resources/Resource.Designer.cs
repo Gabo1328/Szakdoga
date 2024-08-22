@@ -468,6 +468,177 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adatvédelmi Irányelv Tájékoztató.
+        /// </summary>
+        public static string Privacy {
+            get {
+                return ResourceManager.GetString("Privacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ez az Adatvédelmi Irányelv meghatározza a MÁV-SZK által alkalmazott adatvédelmi gyakorlatokat és elveket, amelyek az ügyfeleink, partnereink és alkalmazottjaink személyes adatainak kezelésére vonatkoznak. Az adatvédelem kiemelten fontos számunkra, és elkötelezettek vagyunk az Ön személyes adatainak védelme mellett..
+        /// </summary>
+        public static string Privacy1 {
+            get {
+                return ResourceManager.GetString("Privacy1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Bevezetés.
+        /// </summary>
+        public static string Privacy1L {
+            get {
+                return ResourceManager.GetString("Privacy1L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Az általunk gyűjtött személyes adatokat kizárólag a jogszabályokkal összhangban és a vállalkozásunk tevékenységeinek támogatása céljából használjuk fel. Ezek az adatok lehetnek például név, cím, e-mail cím, telefonszám, és más azonosító információk..
+        /// </summary>
+        public static string Privacy2 {
+            get {
+                return ResourceManager.GetString("Privacy2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2. Személyes adatok gyűjtése és felhasználása.
+        /// </summary>
+        public static string Privacy2L {
+            get {
+                return ResourceManager.GetString("Privacy2L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Az Ön adatvédelmi jogai fontosak számunkra. Kérjük, vegye figyelembe az alábbi jogokat:.
+        /// </summary>
+        public static string Privacy3_1 {
+            get {
+                return ResourceManager.GetString("Privacy3.1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hozzáférés: Jogában áll kérni, hogy tájékoztassuk Önt az általunk kezelt személyes adatairól..
+        /// </summary>
+        public static string Privacy3_2 {
+            get {
+                return ResourceManager.GetString("Privacy3.2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Helyesbítés: Amennyiben az általunk kezelt adatok hibásak vagy hiányosak, jogában áll kérni azok javítását..
+        /// </summary>
+        public static string Privacy3_3 {
+            get {
+                return ResourceManager.GetString("Privacy3.3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Törlés: Bizonyos feltételek mellett jogában áll kérni az adatok törlését..
+        /// </summary>
+        public static string Privacy3_4 {
+            get {
+                return ResourceManager.GetString("Privacy3.4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Korlátozás: Bizonyos esetekben jogában áll kérni az adatok kezelésének korlátozását..
+        /// </summary>
+        public static string Privacy3_5 {
+            get {
+                return ResourceManager.GetString("Privacy3.5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adathordozhatóság: Jogában áll kérni a személyes adatainak átadását vagy másolatának megkapását strukturált, általánosan használt és géppel olvasható formátumban..
+        /// </summary>
+        public static string Privacy3_6 {
+            get {
+                return ResourceManager.GetString("Privacy3.6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ellenvetés: Bizonyos esetekben jogában áll tiltakozni a személyes adatok kezelése ellen..
+        /// </summary>
+        public static string Privacy3_7 {
+            get {
+                return ResourceManager.GetString("Privacy3.7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3. Data protection rights.
+        /// </summary>
+        public static string Privacy3L {
+            get {
+                return ResourceManager.GetString("Privacy3L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Az adatvédelmi szempontokat szigorúan vesszük, és megfelelő technikai és szervezési intézkedéseket alkalmazunk az adatok védelme érdekében. Az adatokhoz való illetéktelen hozzáférést, felhasználást, módosítást vagy más módon történő veszélyeztetést megelőzzük..
+        /// </summary>
+        public static string Privacy4 {
+            get {
+                return ResourceManager.GetString("Privacy4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4. Biztonság és védelem.
+        /// </summary>
+        public static string Privacy4L {
+            get {
+                return ResourceManager.GetString("Privacy4L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Néha szükségünk lehet harmadik felekkel való adatmegosztásra, például üzleti partnerekkel vagy szolgáltatókkal. Minden ilyen esetben gondoskodunk arról, hogy a harmadik fél is megfeleljen az adatvédelmi elvárásoknak..
+        /// </summary>
+        public static string Privacy5 {
+            get {
+                return ResourceManager.GetString("Privacy5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5. Harmadik felek.
+        /// </summary>
+        public static string Privacy5L {
+            get {
+                return ResourceManager.GetString("Privacy5L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ha bármilyen kérdése vagy aggálya van az adatvédelemmel kapcsolatban, kérjük, lépjen kapcsolatba velünk az alábbi elérhetőségen:.
+        /// </summary>
+        public static string Privacy6 {
+            get {
+                return ResourceManager.GetString("Privacy6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6. Kapcsolat.
+        /// </summary>
+        public static string Privacy6L {
+            get {
+                return ResourceManager.GetString("Privacy6L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Regisztráció.
         /// </summary>
         public static string Regisztráció {
@@ -509,6 +680,15 @@ namespace MavAutoKozm.Resources {
         public static string Röviden_a_cégünkről_L {
             get {
                 return ResourceManager.GetString("Röviden a cégünkről_L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

@@ -245,6 +245,63 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   <data name="Polírozás" xml:space="preserve">
     <value>Polishing</value>
   </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Data Protection Directive Information</value>
+  </data>
+  <data name="Privacy1" xml:space="preserve">
+    <value>This Data Protection Policy defines the data protection practices and principles applied by MÁV-SZK, which apply to the management of the personal data of our customers, partners and employees. Data protection is of the utmost importance to us and we are committed to protecting your personal data.</value>
+  </data>
+  <data name="Privacy1L" xml:space="preserve">
+    <value>1. Introduction</value>
+  </data>
+  <data name="Privacy2" xml:space="preserve">
+    <value>We use the personal data we collect only in accordance with the law and for the purpose of supporting the activities of our company. This data can be, for example, name, address, e-mail address, telephone number and other identifying information.</value>
+  </data>
+  <data name="Privacy2L" xml:space="preserve">
+    <value>2. Collection and use of personal data</value>
+  </data>
+  <data name="Privacy3.1" xml:space="preserve">
+    <value>Your data protection rights are important to us. Please note the following rights</value>
+  </data>
+  <data name="Privacy3.2" xml:space="preserve">
+    <value>Access: You have the right to request that we inform you about the personal data we process.</value>
+  </data>
+  <data name="Privacy3.3" xml:space="preserve">
+    <value>Correction: If the data we manage is incorrect or incomplete, you have the right to request their correction.</value>
+  </data>
+  <data name="Privacy3.4" xml:space="preserve">
+    <value>Deletion: Under certain conditions, you have the right to request the deletion of data.</value>
+  </data>
+  <data name="Privacy3.5" xml:space="preserve">
+    <value>Restriction: In certain cases, you have the right to request the restriction of data processing.</value>
+  </data>
+  <data name="Privacy3.6" xml:space="preserve">
+    <value>Data portability: You have the right to request the transfer or receipt of a copy of your personal data in a structured, commonly used and machine-readable format.</value>
+  </data>
+  <data name="Privacy3.7" xml:space="preserve">
+    <value>Objection: In certain cases, you have the right to object to the processing of personal data.</value>
+  </data>
+  <data name="Privacy3L" xml:space="preserve">
+    <value>3. Data protection rights</value>
+  </data>
+  <data name="Privacy4" xml:space="preserve">
+    <value>We take data protection aspects seriously and apply appropriate technical and organizational measures to protect data. We prevent unauthorized access, use, modification or endangerment of data in any other way.</value>
+  </data>
+  <data name="Privacy4L" xml:space="preserve">
+    <value>4. Safety and Security</value>
+  </data>
+  <data name="Privacy5" xml:space="preserve">
+    <value>Sometimes we may need to share data with third parties, such as business partners or service providers. In all such cases, we ensure that the third party also complies with data protection requirements.</value>
+  </data>
+  <data name="Privacy5L" xml:space="preserve">
+    <value>5. Third parties</value>
+  </data>
+  <data name="Privacy6" xml:space="preserve">
+    <value>If you have any questions or concerns about data protection, please contact us at:</value>
+  </data>
+  <data name="Privacy6L" xml:space="preserve">
+    <value>6. Contact</value>
+  </data>
   <data name="Prémium" xml:space="preserve">
     <value>Premium</value>
   </data>
