@@ -4,7 +4,7 @@
     ViewData["Title"] = "Rendelés részletei";
 }
 
-<h1>Rendelés részletei</h1>
+<h1>@MavAutoKozm.Resources.Resource.Rendelés_részletei</h1>
 
 <div>
     <hr />
@@ -16,65 +16,77 @@
             @Html.DisplayFor(model => model.AppUserId)
         </dd>
         <dt class = "col-sm-2">
-            Rendszám
+            @MavAutoKozm.Resources.Resource.Rendszám
         </dt>
         <dd class = "col-sm-10">
             @*@Html.DisplayFor(model => model.VehicleId)*@
             @ViewData["VehicleNumberPlate"]
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
+            @MavAutoKozm.Resources.Resource.Kategória
         </dt>
          <dd class="col-sm-10">
-            @if (Model.Category == 0) {<div>Személyautó</div> }
-            else if( Model.Category == 1) {<div>Teherautó</div> }
-            else if( Model.Category == 2) {<div>Kamion</div> }
-            else {<div>Motor</div> }
+            @if (Model.Category == 0)
+            {
+                <div>@MavAutoKozm.Resources.Resource.Személyautó</div>
+            }
+            else if (Model.Category == 1)
+            {
+                <div>@MavAutoKozm.Resources.Resource.Teherautó</div>
+            }
+            else if (Model.Category == 2)
+            {
+                <div>@MavAutoKozm.Resources.Resource.Kamion</div>
+            }
+            else
+            {
+                <div>@MavAutoKozm.Resources.Resource.Motor</div>
+            }
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Outer)
+            @MavAutoKozm.Resources.Resource.Külső_tisztítás
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Outer)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Inner)
+            @MavAutoKozm.Resources.Resource.Belső_tisztítás
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Inner)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Polish)
+            @MavAutoKozm.Resources.Resource.Polírozás
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Polish)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Wax)
+            @MavAutoKozm.Resources.Resource.Waxolás
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Wax)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ceramic)
+            @MavAutoKozm.Resources.Resource.Kerámia_bevonat
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Ceramic)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ppf)
+            @MavAutoKozm.Resources.Resource.Kavics_védő_fólia
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Ppf)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quality)
+            @MavAutoKozm.Resources.Resource.Minőségi_szint
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Quality)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
+            @MavAutoKozm.Resources.Resource.Ár
         </dt>
         <dd class = "col-sm-10">
             @{
@@ -83,19 +95,19 @@
             <div>@Price</div>
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderTime)
+            @MavAutoKozm.Resources.Resource.Megrendelési_idő
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.OrderTime)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CompletedTime)
+            @MavAutoKozm.Resources.Resource.Végrehajtási_idő
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CompletedTime)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Progress)
+            @MavAutoKozm.Resources.Resource.Állapot
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Progress)
@@ -103,5 +115,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Megrendelesek">Vissza a Megrendelésekhez</a>
+    <a asp-action="Megrendelesek">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
 </div>

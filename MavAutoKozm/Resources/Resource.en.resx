@@ -308,6 +308,9 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   <data name="Regisztráció" xml:space="preserve">
     <value>Sign Up</value>
   </data>
+  <data name="Rendelés részletei" xml:space="preserve">
+    <value>Order details</value>
+  </data>
   <data name="Rendszám" xml:space="preserve">
     <value>License Plate</value>
   </data>
@@ -359,6 +362,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   </data>
   <data name="Waxolás" xml:space="preserve">
     <value>Waxing</value>
+  </data>
+  <data name="Állapot" xml:space="preserve">
+    <value>Progress</value>
   </data>
   <data name="Ár" xml:space="preserve">
     <value>Price</value>

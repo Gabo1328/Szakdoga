@@ -70,6 +70,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Állapot.
+        /// </summary>
+        public static string Állapot {
+            get {
+                return ResourceManager.GetString("Állapot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ár.
         /// </summary>
         public static string Ár {
@@ -644,6 +653,15 @@ namespace MavAutoKozm.Resources {
         public static string Regisztráció {
             get {
                 return ResourceManager.GetString("Regisztráció", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rendelés részletei.
+        /// </summary>
+        public static string Rendelés_részletei {
+            get {
+                return ResourceManager.GetString("Rendelés részletei", resourceCulture);
             }
         }
         

@@ -308,6 +308,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   <data name="Regisztráció" xml:space="preserve">
     <value>Regisztráció</value>
   </data>
+  <data name="Rendelés részletei" xml:space="preserve">
+    <value>Rendelés részletei</value>
+  </data>
   <data name="Rendszám" xml:space="preserve">
     <value>Rendszám</value>
   </data>
@@ -361,6 +364,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Waxolás" xml:space="preserve">
     <value>Waxolás</value>
+  </data>
+  <data name="Állapot" xml:space="preserve">
+    <value>Állapot</value>
   </data>
   <data name="Ár" xml:space="preserve">
     <value>Ár</value>
