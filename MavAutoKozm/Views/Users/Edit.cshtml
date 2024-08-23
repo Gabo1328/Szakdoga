@@ -66,11 +66,23 @@
                         }
                     </td>
                     <td>
-                        <p></p>
                         <div style="margin-right:30px;" class="foOldalGombja nav-link text-dark">
-                            <input type="submit" class="foOldalGombja nav-link text-dark" value="@MavAutoKozm.Resources.Resource.Mentés" @* style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
-                                text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 130px; font-size: 14px; 
-                                margin-bottom: 1%"*@/>
+                            <input type="submit" class="" value="@MavAutoKozm.Resources.Resource.Mentés" style="padding: 15px;
+                                margin: 15px 0px;
+                                width: 220px;
+                                font-size: 15px;
+                                background: lightblue;
+                                border-radius: 10px;
+                                font-weight: 800;
+                                box-shadow: 3px 3px 0px 0px black;
+                                text-align:center" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <a class="foOldalGombja nav-link text-dark" asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
                         </div>
                     </td>
                 </tr>
@@ -78,10 +90,7 @@
         </form>
     </div>
 </div>
-<p></p>
-<div>
-    <a style="margin-right:30px;" class="foOldalGombja nav-link text-dark" asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

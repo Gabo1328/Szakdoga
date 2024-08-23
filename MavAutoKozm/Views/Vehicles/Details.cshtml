@@ -1,5 +1,5 @@
 ﻿@model MavAutoKozm.Models.Vehicle
-
+<link rel=" stylesheet " href="~/css/foOldal.css" asp-append-version="true" />
 @{
     ViewData["Title"] = "Részletek";
 }
@@ -43,6 +43,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">@MavAutoKozm.Resources.Resource.Szerkesztés</a> |
-    <a asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
+    <a class="foOldalGombja nav-link text-dark" asp-action="Edit" asp-route-id="@Model?.Id">@MavAutoKozm.Resources.Resource.Szerkesztés</a>
+    <a class="foOldalGombja nav-link text-dark" asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
 </div>

@@ -1,13 +1,14 @@
 ﻿a.foOldalGombja:link, a.foOldalGombja:visited {
     padding: 15px;
-    margin: 50px 0px;
+    margin: 15px 0px;
     width: 220px;
     font-size: 15px;
     background: lightblue;
     border-radius: 10px;
     font-weight: 800;
     box-shadow: 3px 3px 0px 0px black;
-    text-align:center
+    text-align:center;
+    border:solid 2px;
 }
 a.Gomb:link, a.Gomb:visited {
     background-color: lightblue;

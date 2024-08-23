@@ -1,5 +1,5 @@
 ﻿@model MavAutoKozm.Models.Vehicle
-
+<link rel=" stylesheet " href="~/css/foOldal.css" asp-append-version="true" />
 @{
     ViewData["Title"] = "Szerkesztés";
 }
@@ -8,7 +8,7 @@
 <h1>@MavAutoKozm.Resources.Resource.Szerkesztés</h1>
 
 <hr />
-<div class="row">
+<div>
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -45,16 +45,22 @@
             </div>
             <p></p>
             <div class="form-group">
-                <input type="submit" value="@MavAutoKozm.Resources.Resource.Mentés" class="btn btn-primary" style="background-color:#add8e6; color:black; padding: 5px 20px; text-align: center;
-                    text-decoration: none; display: inline-block; border-radius: 5px; border: 1px solid black; width: 130px; font-size: 14px;
-                    margin-bottom: 1%" />
+                <input type="submit" value="@MavAutoKozm.Resources.Resource.Mentés" style="padding: 15px;
+                                margin: 12px 0px;
+                                width: 220px;
+                                font-size: 15px;
+                                background: lightblue;
+                                border-radius: 10px;
+                                font-weight: 800;
+                                box-shadow: 3px 3px 0px 0px black;
+                                text-align:center" />
             </div>
         </form>
     </div>
 </div>
 <p></p>
 <div>
-    <a asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
+    <a class="foOldalGombja nav-link text-dark" asp-action="Index">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
 </div>
 
 @section Scripts {
