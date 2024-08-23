@@ -1,5 +1,5 @@
 ﻿@model MavAutoKozm.Models.Orders
-
+<link rel=" stylesheet " href="~/css/foOldal.css" asp-append-version="true" />
 @{
     ViewData["Title"] = "Rendelés részletei";
 }
@@ -115,5 +115,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Megrendelesek">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
+    <a class="foOldalGombja nav-link text-dark"  asp-action="Megrendelesek">@MavAutoKozm.Resources.Resource.Vissza_a_listába</a>
 </div>
