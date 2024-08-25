@@ -120,6 +120,12 @@
   <data name="Alap" xml:space="preserve">
     <value>Alap</value>
   </data>
+  <data name="Alkalmazott" xml:space="preserve">
+    <value>Alkalmazott</value>
+  </data>
+  <data name="Alkalmazottá alakítás" xml:space="preserve">
+    <value>Alkalmazottá alakítás</value>
+  </data>
   <data name="Bejelentkezés" xml:space="preserve">
     <value>Bejelentkezés</value>
   </data>
@@ -195,6 +201,9 @@ A "Megrendelés indítása" gombra kattintva már ki is választhatja az önnek 
   </data>
   <data name="Legjobb választás" xml:space="preserve">
     <value>Legjobb választás</value>
+  </data>
+  <data name="Megnevezés" xml:space="preserve">
+    <value>Megnevezés</value>
   </data>
   <data name="Megrendelés" xml:space="preserve">
     <value>Megrendelés</value>
@@ -352,6 +361,9 @@ Cégünk gondoskodik mind az elszállításról mind az ügyfélnek átadásról
   </data>
   <data name="Törlés" xml:space="preserve">
     <value>Törlés</value>
+  </data>
+  <data name="Vasarlo" xml:space="preserve">
+    <value>Vasarlo</value>
   </data>
   <data name="Vezetéknév" xml:space="preserve">
     <value>Vezetéknév</value>

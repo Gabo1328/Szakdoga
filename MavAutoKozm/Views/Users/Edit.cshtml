@@ -62,7 +62,7 @@
                             @if (User.IsInRole("Admin"))
                         {
                             <p></p>
-                            <a class="Gomb nav-link text-dark" style="width: 180px" asp-area="" asp-controller="Users" asp-action="ChangeRole" asp-route-appuserid="@Model.ID">Alkalmazottá alakítás</a>
+                            <a class="foOldalGombja nav-link text-dark" style="width: 300px" asp-area="" asp-controller="Users" asp-action="ChangeRole" asp-route-appuserid="@Model.ID">@MavAutoKozm.Resources.Resource.Alkalmazottá_alakítás</a>
                         }
                     </td>
                     <td>

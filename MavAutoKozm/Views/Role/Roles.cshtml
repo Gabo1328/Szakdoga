@@ -1,18 +1,19 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+<link rel=" stylesheet " href="~/css/foOldal.css" asp-append-version="true" />
 @{
     ViewData["Title"] = "Roles";
 }
 
-<h1>Szerepkörök</h1>
+<h1>@MavAutoKozm.Resources.Resource.Szerepkörök</h1>
 
 <p>
-    <a asp-action="Create">Új hozzáadása</a>
+    <a class="foOldalGombja nav-link text-dark" asp-action="Create">@MavAutoKozm.Resources.Resource.Új_hozzáadása</a>
 </p>
 <table class="table" aria-hidden="true">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @MavAutoKozm.Resources.Resource.Megnevezés
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Id)
@@ -31,8 +32,8 @@
                     @Html.DisplayFor(modelItem => item.Id)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Részletek</a> |
-                    <a asp-action="DeleteRole" asp-route-id="@item.Id">Törlés</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Részletek</a> |
+                    <a style="color: red" asp-action="DeleteRole" asp-route-id="@item.Id">@MavAutoKozm.Resources.Resource.Törlés</a>
                 </td>
             </tr>
         }

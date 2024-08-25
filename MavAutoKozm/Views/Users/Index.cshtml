@@ -20,16 +20,16 @@ else
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.LastName)
+                    @MavAutoKozm.Resources.Resource.Keresztnév
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.FirstMidName)
+                    @MavAutoKozm.Resources.Resource.Vezetéknév
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Email)
+                    @MavAutoKozm.Resources.Resource.Email
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                    @MavAutoKozm.Resources.Resource.Telefonszám
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.AspNetUserId)
@@ -56,9 +56,9 @@ else
                     @Html.DisplayFor(modelItem => item.AspNetUserId)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Szerkesztés</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Részletek</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Törlés</a>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@MavAutoKozm.Resources.Resource.Szerkesztés</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">@MavAutoKozm.Resources.Resource.Részletek</a> |
+                        <a style="color:red" asp-action="Delete" asp-route-id="@item.ID">@MavAutoKozm.Resources.Resource.Törlés</a>
                 </td>
             </tr>
     }

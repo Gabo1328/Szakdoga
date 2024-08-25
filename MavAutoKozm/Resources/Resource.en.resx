@@ -120,6 +120,12 @@
   <data name="Alap" xml:space="preserve">
     <value>Basis</value>
   </data>
+  <data name="Alkalmazott" xml:space="preserve">
+    <value>Employed</value>
+  </data>
+  <data name="Alkalmazottá alakítás" xml:space="preserve">
+    <value>Becoming an employee</value>
+  </data>
   <data name="Bejelentkezés" xml:space="preserve">
     <value>Sign In</value>
   </data>
@@ -195,6 +201,9 @@ By clicking on the "Start order" button, you can choose the category that suits 
   </data>
   <data name="Legjobb választás" xml:space="preserve">
     <value>Best choice</value>
+  </data>
+  <data name="Megnevezés" xml:space="preserve">
+    <value>Designation</value>
   </data>
   <data name="Megrendelés" xml:space="preserve">
     <value>Order</value>
@@ -350,6 +359,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   </data>
   <data name="Törlés" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Vasarlo" xml:space="preserve">
+    <value>Buyer</value>
   </data>
   <data name="Vezetéknév" xml:space="preserve">
     <value>Last Name</value>
