@@ -129,6 +129,9 @@
   <data name="Bejelentkezés" xml:space="preserve">
     <value>Sign In</value>
   </data>
+  <data name="belső i" xml:space="preserve">
+    <value>Vacuuming and dedusting the interior of the car (passenger compartment, trunk) and cleaning the inner surfaces of the windows.</value>
+  </data>
   <data name="Belső tisztítás" xml:space="preserve">
     <value>Internal cleaning</value>
   </data>
@@ -181,8 +184,14 @@ By clicking on the "Start order" button, you can choose the category that suits 
   <data name="Kamion" xml:space="preserve">
     <value>Truck</value>
   </data>
+  <data name="karamia i" xml:space="preserve">
+    <value>The ceramic coating is an extremely hard material and, thanks to this property, forms an amazing protective layer on the coated surfaces. After the surface of a car's exterior is treated with this, it becomes more resistant to scratches and dirt.</value>
+  </data>
   <data name="Kategória" xml:space="preserve">
     <value>Category</value>
+  </data>
+  <data name="kavics i" xml:space="preserve">
+    <value>The purpose of body protection films is to protect the paint from minor external mechanical impacts and wear, so that the car retains its original appearance.</value>
   </data>
   <data name="Kavics védő fólia" xml:space="preserve">
     <value>Paint Protection Film</value>
@@ -195,6 +204,9 @@ By clicking on the "Start order" button, you can choose the category that suits 
   </data>
   <data name="Köszönjük a megrendelést" xml:space="preserve">
     <value>Thanks for your order</value>
+  </data>
+  <data name="külső i" xml:space="preserve">
+    <value>High-pressure water, so-called steam shaving followed by washing with shampoo. Then blow off the water with high-pressure air, clean the outer surfaces of the windows, and wipe the car dry.</value>
   </data>
   <data name="Külső tisztítás" xml:space="preserve">
     <value>External cleaning</value>
@@ -250,6 +262,9 @@ Our company takes care of both the delivery and the delivery to the customer, wh
   </data>
   <data name="Módosítás" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="polir i" xml:space="preserve">
+    <value>Machine application of two coats of polish and one coat of hard wax to enhance the car's exterior finish</value>
   </data>
   <data name="Polírozás" xml:space="preserve">
     <value>Polishing</value>
@@ -371,6 +386,9 @@ Our company offers a new and more convenient way to keep your beloved vehicle cl
   </data>
   <data name="Végrehajtási idő" xml:space="preserve">
     <value>Execution Time</value>
+  </data>
+  <data name="wax i" xml:space="preserve">
+    <value>Recommended for cars with more worn paintwork. After coating the polished elements with wax on a dry car, polishing with a sponge disc attached to the machine.</value>
   </data>
   <data name="Waxolás" xml:space="preserve">
     <value>Waxing</value>

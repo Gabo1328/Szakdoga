@@ -115,6 +115,15 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Az autó belső terének (utastér, csomagtartó) kiporszívózása, portalanítása, valamint az ablakok belső felületeinek tisztítása..
+        /// </summary>
+        public static string belső_i {
+            get {
+                return ResourceManager.GetString("belső i", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Belső tisztítás.
         /// </summary>
         public static string Belső_tisztítás {
@@ -269,11 +278,29 @@ namespace MavAutoKozm.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A kerámia bevonat egy rendkívüli kemény anyag és ennek a tulajdonságának köszönhetően, egy elképesztő védőréteget képez a bevont felületeken. Miután ezzel kezelnek egy autó külsőjének a felszínét, az ellenállóbbá válik úgy a karcolással, úgy a koszolódással szemben..
+        /// </summary>
+        public static string karamia_i {
+            get {
+                return ResourceManager.GetString("karamia i", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kategória.
         /// </summary>
         public static string Kategória {
             get {
                 return ResourceManager.GetString("Kategória", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A karosszériavédő fóliák célja a fényezés védelme a kisebb külső mechanikai behatásoktól és kopástól, hogy az autó megőrizze eredeti megjelenését..
+        /// </summary>
+        public static string kavics_i {
+            get {
+                return ResourceManager.GetString("kavics i", resourceCulture);
             }
         }
         
@@ -310,6 +337,15 @@ namespace MavAutoKozm.Resources {
         public static string Köszönjük_a_megrendelést {
             get {
                 return ResourceManager.GetString("Köszönjük a megrendelést", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nagynyomású vízzel történő, un. gőzborotválás, melyet samponos mosás követ. Ezután nagynyomású levegővel a víz lefúvatása, az ablakok külső felületeinek tisztítása, valamint az autó szárazra törlése..
+        /// </summary>
+        public static string külső_i {
+            get {
+                return ResourceManager.GetString("külső i", resourceCulture);
             }
         }
         
@@ -482,6 +518,15 @@ namespace MavAutoKozm.Resources {
         public static string Összegzés {
             get {
                 return ResourceManager.GetString("Összegzés", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Az autó külső fényezésének javítása érdekében két rétegű polírozás és egy rétegű kemény viasz gépi felhordása.
+        /// </summary>
+        public static string polir_i {
+            get {
+                return ResourceManager.GetString("polir i", resourceCulture);
             }
         }
         
@@ -869,6 +914,15 @@ namespace MavAutoKozm.Resources {
         public static string Vissza_a_listába {
             get {
                 return ResourceManager.GetString("Vissza a listába", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kopottabb fényezésű autóknál ajánlott. Száraz autón a fényezett elemek waxszal történő bekenése után gépre erősített szivacskoronggal végzett fényesítés..
+        /// </summary>
+        public static string wax_i {
+            get {
+                return ResourceManager.GetString("wax i", resourceCulture);
             }
         }
         
